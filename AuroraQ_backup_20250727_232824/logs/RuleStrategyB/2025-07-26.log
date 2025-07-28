@@ -1,0 +1,131 @@
+[2025-07-26 23:20:49] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:22:27] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:22:27] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:24:50] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:24:50] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:26:10] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:29:08] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:29:08] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:36:42] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:38:30] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:38:30] [ERROR] [RuleStrategyB] [RuleStrategyB] should_enter 오류: operands could not be broadcast together with shapes (4,) (5,) 
+[2025-07-26 23:40:47] [INFO] [RuleStrategyB] RuleStrategyB 초기화: Volume(30), EMA(20/60/120), TP/SL(1.8%/0.9%)
+[2025-07-26 23:40:47] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 42760.78 | 신뢰도: 0.76 | 거래량: 1.5x (Z:1.2) | TP: 1.8%, SL: 0.9%
+[2025-07-26 23:46:36] [INFO] [RuleStrategyB] RuleStrategyB 초기화: MA(5/30), EMA(60/120), Volume(1.8), RSI(15)
+[2025-07-26 23:51:19] [INFO] [RuleStrategyB] RuleStrategyB 초기화: MA(5/30), EMA(60/120), Volume(1.8), RSI(15)
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] RuleStrategyB 초기화: MA(5/30), EMA(60/120), Volume(1.8), RSI(15)
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 38543.07 | 신뢰도: 0.76 | RSI: 60.9 | Volume: 0.8x | 감정: 0.49
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.34% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 39621.89 | 신뢰도: 0.72 | RSI: 80.3 | Volume: 2.1x | 감정: 0.67
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.44% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 40562.62 | 신뢰도: 0.65 | RSI: 87.4 | Volume: 1.3x | 감정: 0.71
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.15% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 41672.77 | 신뢰도: 0.70 | RSI: 92.5 | Volume: 1.7x | 감정: 0.69
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 1.99% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 42735.11 | 신뢰도: 0.75 | RSI: 95.2 | Volume: 1.3x | 감정: 0.83
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.15% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 44299.44 | 신뢰도: 0.76 | RSI: 97.1 | Volume: 1.4x | 감정: 0.79
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 1.94% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 45675.94 | 신뢰도: 0.75 | RSI: 98.2 | Volume: 1.2x | 감정: 0.87
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 1.92% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 47308.40 | 신뢰도: 0.75 | RSI: 99.0 | Volume: 1.2x | 감정: 0.62
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 1.90% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 48663.24 | 신뢰도: 0.76 | RSI: 99.4 | Volume: 1.3x | 감정: 0.89
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.31% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 50190.77 | 신뢰도: 0.76 | RSI: 98.3 | Volume: 1.4x | 감정: 0.84
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.35% | 보유시간: 0초
+[2025-07-26 23:51:41] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 51663.50 | 신뢰도: 0.75 | RSI: 99.0 | Volume: 1.3x | 감정: 0.64
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] RuleStrategyB 초기화: MA(5/30), EMA(60/120), Volume(1.8), RSI(15)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 38472.64 | 신뢰도: 0.77 | RSI: 55.6 | Volume: 1.2x | 감정: 0.43
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.29% | 보유시간: 0초
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 39396.24 | 신뢰도: 0.69 | RSI: 74.3 | Volume: 2.0x | 감정: 0.73
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.04% | 보유시간: 0초
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] [RuleStrategyB] 진입 신호 | 가격: 40512.97 | 신뢰도: 0.70 | RSI: 86.0 | Volume: 2.2x | 감정: 0.78
+[2025-07-26 23:53:47] [INFO] [RuleStrategyB] [RuleStrategyB] 청산 신호 | 이유: take_profit | PnL: 2.30% | 보유시간: 0초

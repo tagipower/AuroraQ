@@ -1,0 +1,36 @@
+fee_rate:
+  market: 0.0004
+  limit: 0.0002
+fee_type: "market"
+
+reward:
+  max_holding: 30
+  over_hold_penalty: 2.0
+
+  # 감정 점수 기반 shaping
+  use_sentiment_reward: true
+  sentiment_risk_penalty: true
+  sentiment_weight: 3.0
+
+  # 이벤트/레짐/추세 mismatch penalty
+  event_penalty: 1.5
+  regime_penalty: 1.0
+  trend_mismatch_penalty: 1.0
+
+  # 장기보유 보상
+  hold_reward_ratio: 0.01
+
+  # 정규화 리워드/익절/손절 shaping
+  reward_shaping:
+    enable: true
+    normalized_reward: true
+    use_profit_percentage_bonus: true
+    use_loss_penalty: true
+    profit_threshold: 0.01
+    loss_threshold: -0.005
+    profit_weight: 2.0
+    loss_weight: 2.5
+
+logging:
+  enable_reward_logging: true
+  reward_log_path: logs/reward_log.csv

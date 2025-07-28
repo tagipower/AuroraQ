@@ -1,0 +1,24 @@
+[2025-07-26 23:20:49] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:22:27] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:22:27] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:24:50] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:24:50] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:26:10] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:27:48] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:27:48] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 39480.25 | 신뢰도: 0.90 | RSI: 78.2 | BB위치: 1.08 | TP: 0.8%, SL: 2.0%
+[2025-07-26 23:29:08] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:29:08] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 38776.45 | 신뢰도: 0.80 | RSI: 61.1 | BB위치: 1.00 | TP: 0.8%, SL: 2.0%
+[2025-07-26 23:29:08] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 39234.36 | 신뢰도: 0.86 | RSI: 71.8 | BB위치: 1.30 | TP: 0.8%, SL: 2.0%
+[2025-07-26 23:35:06] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:36:42] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:36:42] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 41599.28 | 신뢰도: 0.92 | RSI: 73.6 | BB위치: 1.23 | TP: 0.8%, SL: 2.0%
+[2025-07-26 23:38:30] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:38:30] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 38791.50 | 신뢰도: 0.80 | RSI: 61.4 | BB위치: 1.14 | TP: 0.8%, SL: 2.0%
+[2025-07-26 23:38:30] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 40613.19 | 신뢰도: 0.95 | RSI: 85.1 | BB위치: 1.15 | TP: 1.0%, SL: 2.0%
+[2025-07-26 23:40:47] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20/2σ), RSI(14), TP/SL(0.8%/103.0%)
+[2025-07-26 23:40:47] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 40570.10 | 신뢰도: 0.95 | RSI: 87.6 | BB위치: 1.16 | TP: 1.0%, SL: 2.0%
+[2025-07-26 23:40:47] [INFO] [RuleStrategyC] [RuleStrategyC] SHORT 진입 신호 | 가격: 42760.78 | 신뢰도: 0.95 | RSI: 94.0 | BB위치: 1.08 | TP: 1.0%, SL: 2.0%
+[2025-07-26 23:51:19] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20, 2), 감정(0.4), 변동성(2.0)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyC] RuleStrategyC 초기화: BB(20, 2), 감정(0.4), 변동성(2.0)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyC] [RuleStrategyC] 진입 신호 (SHORT) | 가격: 39351.84 | 신뢰도: 0.68 | BB위치: 1.00 | RSI: 74.4 | 감정: 0.64
+[2025-07-26 23:53:47] [INFO] [RuleStrategyC] [RuleStrategyC] 진입 신호 (SHORT) | 가격: 39396.24 | 신뢰도: 0.70 | BB위치: 1.00 | RSI: 75.2 | 감정: 0.73

@@ -1,0 +1,13 @@
+{
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/core",
+    "${workspaceFolder}/utils",
+    "${workspaceFolder}/models",
+    "${workspaceFolder}/config"
+  ],
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}"
+  }
+}

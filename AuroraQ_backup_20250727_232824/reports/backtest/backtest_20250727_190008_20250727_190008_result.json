@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "metrics": {
+    "all_metrics": {
+      "SimpleMA": "PerformanceMetrics(total_return=0.0, roi=0.0, annualized_return=0.0, sharpe_ratio=0.0, sortino_ratio=0.0, calmar_ratio=0.0, max_drawdown=0.0, max_drawdown_duration=0, volatility=0.0, downside_deviation=0.0, var_95=0.0, cvar_95=0.0, total_trades=0, winning_trades=0, losing_trades=0, win_rate=0.0, profit_factor=0.0, expectancy=0.0, avg_win=0.0, avg_loss=0.0, avg_win_loss_ratio=0.0, consistency_score=0.0, max_consecutive_wins=0, max_consecutive_losses=0, avg_holding_time_hours=0.0, avg_trades_per_day=0.0, total_commission=0.0, total_slippage=0.0, sample_size=0, confidence_level=0.0, composite_score=0.0, weighted_score=0.0)",
+      "RSIStrategy": "PerformanceMetrics(total_return=0.0, roi=0.0, annualized_return=0.0, sharpe_ratio=0.0, sortino_ratio=0.0, calmar_ratio=0.0, max_drawdown=0.0, max_drawdown_duration=0, volatility=0.0, downside_deviation=0.0, var_95=0.0, cvar_95=0.0, total_trades=0, winning_trades=0, losing_trades=0, win_rate=0.0, profit_factor=0.0, expectancy=0.0, avg_win=0.0, avg_loss=0.0, avg_win_loss_ratio=0.0, consistency_score=0.0, max_consecutive_wins=0, max_consecutive_losses=0, avg_holding_time_hours=0.0, avg_trades_per_day=0.0, total_commission=0.0, total_slippage=0.0, sample_size=0, confidence_level=0.0, composite_score=0.0, weighted_score=0.0)",
+      "DummyStrategy": "PerformanceMetrics(total_return=0.0, roi=0.0, annualized_return=0.0, sharpe_ratio=0.0, sortino_ratio=0.0, calmar_ratio=0.0, max_drawdown=0.0, max_drawdown_duration=0, volatility=0.0, downside_deviation=0.0, var_95=0.0, cvar_95=0.0, total_trades=0, winning_trades=0, losing_trades=0, win_rate=0.0, profit_factor=0.0, expectancy=0.0, avg_win=0.0, avg_loss=0.0, avg_win_loss_ratio=0.0, consistency_score=0.0, max_consecutive_wins=0, max_consecutive_losses=0, avg_holding_time_hours=0.0, avg_trades_per_day=0.0, total_commission=0.0, total_slippage=0.0, sample_size=0, confidence_level=0.0, composite_score=0.0, weighted_score=0.0)"
+    },
+    "best_strategy": "",
+    "best_metrics": "PerformanceMetrics(total_return=0.0, roi=0.0, annualized_return=0.0, sharpe_ratio=0.0, sortino_ratio=0.0, calmar_ratio=0.0, max_drawdown=0.0, max_drawdown_duration=0, volatility=0.0, downside_deviation=0.0, var_95=0.0, cvar_95=0.0, total_trades=0, winning_trades=0, losing_trades=0, win_rate=0.0, profit_factor=0.0, expectancy=0.0, avg_win=0.0, avg_loss=0.0, avg_win_loss_ratio=0.0, consistency_score=0.0, max_consecutive_wins=0, max_consecutive_losses=0, avg_holding_time_hours=0.0, avg_trades_per_day=0.0, total_commission=0.0, total_slippage=0.0, sample_size=0, confidence_level=0.0, composite_score=0.0, weighted_score=0.0)",
+    "comparison": {}
+  },
+  "reports": {},
+  "stats": {
+    "total_signals": 0,
+    "executed_trades": 0,
+    "exploration_trades": 0,
+    "processing_time": [],
+    "execution_time": 0.008592844009399414,
+    "cache_stats": {
+      "size": 0,
+      "max_size": 1000,
+      "hit_count": 0,
+      "miss_count": 0,
+      "hit_rate": 0,
+      "total_requests": 0
+    },
+    "feedback_stats": {
+      "mab_statistics": {}
+    }
+  }
+}

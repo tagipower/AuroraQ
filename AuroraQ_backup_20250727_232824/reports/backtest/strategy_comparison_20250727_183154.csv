@@ -1,0 +1,4 @@
+Strategy,Trades,ROI,Sharpe,Win Rate,Profit Factor,Max DD,Composite Score,Weighted Score,Confidence
+RSIStrategy,399,-433.07%,-22.19,0.00%,0.00,433.07%,-1.035,-1.035,0.00%
+SimpleMA,420,-390.70%,-28.87,0.00%,0.00,390.70%,-0.880,-0.880,0.00%
+DummyStrategy,376,-301.51%,-21.05,0.00%,0.00,301.51%,-0.752,-0.752,0.00%

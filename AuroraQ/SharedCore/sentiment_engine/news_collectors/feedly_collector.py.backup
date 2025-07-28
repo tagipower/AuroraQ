@@ -1,0 +1,714 @@
+"""
+Enhanced Feedly API 뉴스 수집기
+Feed API와 Search API를 모두 지원하는 통합 뉴스 수집 시스템
+"""
+
+import asyncio
+import sys
+from pathlib import Path
+from typing import Dict, List, Optional, Any, Set
+from datetime import datetime, timedelta
+import logging
+from dataclasses import dataclass
+import os
+
+# 상위 디렉토리 모듈 임포트
+sys.path.append(str(Path(__file__).parent.parent.parent))
+
+from data_collection.feedly_client import (
+    FeedlyClient, FeedlyConfig, FeedlyArticle, FeedlySearchQuery,
+    AuroraQFeedlyIntegration, create_auroaq_integration,
+    FeedlyContentType, FeedlyLanguage
+)
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass 
+class NewsArticle:
+    """뉴스 기사 데이터 (하위호환용)"""
+    id: str
+    title: str
+    summary: str
+    content: str
+    url: str
+    published: datetime
+    source: str
+    author: Optional[str]
+    keywords: List[str]
+    engagement: Dict[str, int]
+    
+    @classmethod
+    def from_feedly_article(cls, article: FeedlyArticle) -> 'NewsArticle':
+        """FeedlyArticle을 NewsArticle로 변환"""
+        return cls(
+            id=article.id,
+            title=article.title,
+            summary=article.summary,
+            content=article.content,
+            url=article.url,
+            published=article.published,
+            source=article.source_title,
+            author=article.author,
+            keywords=article.keywords,
+            engagement={'count': article.engagement}
+        )
+
+
+class FeedlyCollector:
+    """
+    Enhanced Feedly API 뉴스 수집기
+    - Feed API와 Search API 모두 지원
+    - AuroraQ와 MacroQ용 특화 기능
+    - 향상된 필터링 및 캐싱
+    """
+    
+    def __init__(self, access_token: Optional[str] = None):
+        # 환경변수에서 토큰 가져오기
+        self.access_token = access_token or os.getenv("FEEDLY_ACCESS_TOKEN")
+        
+        if not self.access_token:
+            logger.warning("Feedly access token not provided. Limited functionality.")
+            self.auroaq_integration = None
+            self.client = None
+            return
+        
+        # AuroraQ 통합 초기화
+        self.auroaq_integration = create_auroaq_integration(self.access_token)
+        self.client = self.auroaq_integration.client
+        
+        # 암호화폐 관련 키워드 (하위호환용)
+        self.crypto_keywords = {
+            'bitcoin', 'btc', 'ethereum', 'eth', 'cryptocurrency', 'crypto',
+            'blockchain', 'defi', 'nft', 'altcoin', 'binance', 'coinbase',
+            'dogecoin', 'ripple', 'cardano', 'polkadot', 'chainlink',
+            'solana', 'avalanche', 'polygon', 'uniswap', 'web3'
+        }
+        
+        # 추적할 소스들 (하위호환용)
+        self.crypto_sources = [
+            'CoinDesk', 'Cointelegraph', 'CryptoSlate', 'The Block',
+            'Decrypt', 'CoinGecko', 'CryptoNews', 'Bitcoin Magazine',
+            'Blockworks', 'NewsBTC', 'CoinJournal', 'U.Today'
+        ]
+        
+        # 감정 분석을 위한 긍정/부정 키워드 (하위호환용)
+        self.sentiment_keywords = {
+            'positive': {
+                'bull', 'bullish', 'moon', 'pump', 'surge', 'rally',
+                'breakthrough', 'adoption', 'partnership', 'launch',
+                'upgrade', 'milestone', 'success', 'growth', 'rise'
+            },
+            'negative': {
+                'bear', 'bearish', 'crash', 'dump', 'fall', 'drop',
+                'hack', 'scam', 'regulation', 'ban', 'concern',
+                'risk', 'decline', 'loss', 'sell-off', 'correction'
+            }
+        }
+        
+    async def connect(self):
+        """Feedly API 연결"""
+        if not self.client:
+            logger.warning("Feedly client not initialized. Token may be missing.")
+            return
+        
+        try:
+            # 새로운 클라이언트로 헬스체크
+            health = await self.client.health_check()
+            if health.get('status') == 'healthy':
+                logger.info(f"Connected to Feedly as {health.get('email', 'User')}")
+            else:
+                logger.warning(f"Feedly connection issue: {health.get('error', 'Unknown')}")
+        except Exception as e:
+            logger.warning(f"Feedly token validation failed: {e}")
+    
+    # 기존 메서드들은 하위호환을 위해 유지하되, 새 클라이언트 사용하도록 변경
+    async def _request(self, method: str, endpoint: str, params: Optional[Dict] = None, data: Optional[Dict] = None) -> Dict[str, Any]:
+        """API 요청 (하위호환용 - 새 클라이언트 사용)"""
+        if not self.client:
+            raise Exception("Feedly client not initialized")
+        
+        # 새 클라이언트의 _make_request 메서드 사용
+        return await self.client._make_request(endpoint, params)
+    
+    async def _handle_response(self, response) -> Dict[str, Any]:
+        """응답 처리 (하위호환용)"""
+        # 새 클라이언트에서는 내부적으로 처리됨
+        return response
+    
+    async def search_feeds(self, query: str, count: int = 20) -> List['FeedlyStream']:
+        """피드 검색 (하위호환용)"""
+        if not self.client:
+            return []
+        
+        try:
+            # 새 클라이언트의 사용자 피드 목록 사용
+            user_feeds = await self.client.get_user_feeds()
+            
+            # 쿼리와 매칭되는 피드 필터링
+            matched_feeds = []
+            query_lower = query.lower()
+            
+            for feed in user_feeds[:count]:
+                if (query_lower in feed.get('title', '').lower() or 
+                    query_lower in feed.get('website', '').lower()):
+                    matched_feeds.append(FeedlyStream(
+                        id=feed['id'],
+                        title=feed['title'],
+                        description='',
+                        website=feed['website'],
+                        subscribers=feed.get('subscribers', 0),
+                        language='en'
+                    ))
+            
+            return matched_feeds
+            
+        except Exception as e:
+            logger.error(f"Feed search failed: {e}")
+            return []
+    
+    async def get_crypto_feeds(self) -> List['FeedlyStream']:
+        """암호화폐 관련 피드 검색 (하위호환용)"""
+        if not self.client:
+            return []
+        
+        try:
+            # 새 클라이언트의 사용자 피드 목록 사용
+            user_feeds = await self.client.get_user_feeds()
+            
+            # 암호화폐 관련 피드 필터링
+            crypto_feeds = []
+            crypto_terms = ['crypto', 'bitcoin', 'blockchain', 'coin', 'defi']
+            
+            for feed in user_feeds:
+                title_lower = feed.get('title', '').lower()
+                website_lower = feed.get('website', '').lower()
+                
+                if any(term in title_lower or term in website_lower for term in crypto_terms):
+                    crypto_feeds.append(FeedlyStream(
+                        id=feed['id'],
+                        title=feed['title'],
+                        description='',
+                        website=feed['website'],
+                        subscribers=feed.get('subscribers', 0),
+                        language='en'
+                    ))
+            
+            # 구독자 수 기준 정렬
+            sorted_feeds = sorted(crypto_feeds, key=lambda x: x.subscribers, reverse=True)
+            
+            logger.info(f"Found {len(sorted_feeds)} crypto feeds")
+            return sorted_feeds[:50]  # 상위 50개만
+            
+        except Exception as e:
+            logger.error(f"Crypto feeds search failed: {e}")
+            return []
+    
+    async def get_stream_content(
+        self,
+        stream_id: str,
+        count: int = 100,
+        newer_than: Optional[datetime] = None
+    ) -> List[NewsArticle]:
+        """스트림 콘텐츠 조회 (하위호환용)"""
+        if not self.client:
+            return []
+        
+        try:
+            # 새 클라이언트의 get_feed_content 사용
+            feedly_articles = await self.client.get_feed_content(
+                feed_id=stream_id,
+                count=count,
+                since=newer_than
+            )
+            
+            # FeedlyArticle을 NewsArticle로 변환
+            articles = []
+            for feedly_article in feedly_articles:
+                news_article = NewsArticle.from_feedly_article(feedly_article)
+                if self._is_crypto_relevant(news_article):
+                    articles.append(news_article)
+            
+            logger.debug(f"Retrieved {len(articles)} crypto articles from {stream_id}")
+            return articles
+            
+        except Exception as e:
+            logger.error(f"Failed to get stream content for {stream_id}: {e}")
+            return []
+    
+    # ========== 새로운 Search API 기능들 ==========
+    
+    async def search_crypto_news(self, keywords: List[str], hours: int = 24) -> List[NewsArticle]:
+        """암호화폐 뉴스 검색 (Search API 사용)"""
+        if not self.auroaq_integration:
+            logger.warning("AuroraQ integration not available")
+            return []
+        
+        try:
+            feedly_articles = await self.auroaq_integration.get_btc_news(hours) if 'bitcoin' in [k.lower() for k in keywords] else []
+            
+            # 추가 키워드 검색
+            if keywords:
+                search_query = FeedlySearchQuery(
+                    query=" OR ".join(f'"{keyword}"' for keyword in keywords[:5]),
+                    count=50,
+                    since=datetime.now() - timedelta(hours=hours),
+                    content_types=[FeedlyContentType.ARTICLE, FeedlyContentType.NEWS],
+                    language=FeedlyLanguage.ENGLISH
+                )
+                
+                additional_articles = await self.client.search_content(search_query)
+                feedly_articles.extend(additional_articles)
+            
+            # 중복 제거 및 변환
+            seen_ids = set()
+            articles = []
+            
+            for feedly_article in feedly_articles:
+                if feedly_article.id not in seen_ids:
+                    seen_ids.add(feedly_article.id)
+                    news_article = NewsArticle.from_feedly_article(feedly_article)
+                    articles.append(news_article)
+            
+            logger.info(f"Search returned {len(articles)} articles for keywords: {keywords}")
+            return articles
+            
+        except Exception as e:
+            logger.error(f"Crypto news search failed: {e}")
+            return []
+    
+    async def search_btc_news(self, hours: int = 24) -> List[NewsArticle]:
+        """BTC 관련 뉴스 검색"""
+        if not self.auroaq_integration:
+            return []
+        
+        try:
+            feedly_articles = await self.auroaq_integration.get_btc_news(hours)
+            return [NewsArticle.from_feedly_article(fa) for fa in feedly_articles]
+        except Exception as e:
+            logger.error(f"BTC news search failed: {e}")
+            return []
+    
+    async def search_eth_news(self, hours: int = 24) -> List[NewsArticle]:
+        """ETH 관련 뉴스 검색"""
+        if not self.auroaq_integration:
+            return []
+        
+        try:
+            feedly_articles = await self.auroaq_integration.get_eth_news(hours)
+            return [NewsArticle.from_feedly_article(fa) for fa in feedly_articles]
+        except Exception as e:
+            logger.error(f"ETH news search failed: {e}")
+            return []
+    
+    async def search_defi_news(self, hours: int = 24) -> List[NewsArticle]:
+        """DeFi 관련 뉴스 검색"""
+        if not self.auroaq_integration:
+            return []
+        
+        try:
+            feedly_articles = await self.auroaq_integration.get_defi_news(hours)
+            return [NewsArticle.from_feedly_article(fa) for fa in feedly_articles]
+        except Exception as e:
+            logger.error(f"DeFi news search failed: {e}")
+            return []
+    
+    async def search_regulation_news(self, hours: int = 48) -> List[NewsArticle]:
+        """규제 관련 뉴스 검색"""
+        if not self.auroaq_integration:
+            return []
+        
+        try:
+            feedly_articles = await self.auroaq_integration.get_regulation_news(hours)
+            return [NewsArticle.from_feedly_article(fa) for fa in feedly_articles]
+        except Exception as e:
+            logger.error(f"Regulation news search failed: {e}")
+            return []
+    
+    async def search_altcoin_news(self, symbols: List[str], hours: int = 24) -> List[NewsArticle]:
+        """알트코인 뉴스 검색"""
+        if not self.auroaq_integration:
+            return []
+        
+        try:
+            feedly_articles = await self.auroaq_integration.get_altcoin_news(symbols, hours)
+            return [NewsArticle.from_feedly_article(fa) for fa in feedly_articles]
+        except Exception as e:
+            logger.error(f"Altcoin news search failed: {e}")
+            return []
+    
+    async def get_trending_crypto_news(self, count: int = 20) -> List[NewsArticle]:
+        """트렌딩 암호화폐 뉴스"""
+        if not self.client:
+            return []
+        
+        try:
+            feedly_articles = await self.client.get_trending_topics("technology", count)
+            
+            # 암호화폐 관련 필터링
+            crypto_articles = []
+            for article in feedly_articles:
+                news_article = NewsArticle.from_feedly_article(article)
+                if self._is_crypto_relevant(news_article):
+                    crypto_articles.append(news_article)
+            
+            return crypto_articles
+            
+        except Exception as e:
+            logger.error(f"Trending crypto news failed: {e}")
+            return []
+    
+    # ========== 고급 분석 기능들 ==========
+    
+    async def get_market_sentiment_articles(self, hours: int = 6) -> Dict[str, List[NewsArticle]]:
+        """시장 감정별로 분류된 기사들"""
+        try:
+            # 최근 기사들 수집
+            btc_articles = await self.search_btc_news(hours)
+            eth_articles = await self.search_eth_news(hours) 
+            defi_articles = await self.search_defi_news(hours)
+            
+            all_articles = btc_articles + eth_articles + defi_articles
+            
+            # 감정별 분류
+            sentiment_articles = {
+                'positive': [],
+                'negative': [],
+                'neutral': []
+            }
+            
+            for article in all_articles:
+                sentiment = self._classify_sentiment(article)
+                sentiment_articles[sentiment].append(article)
+            
+            logger.info(f"Classified {len(all_articles)} articles by sentiment")
+            return sentiment_articles
+            
+        except Exception as e:
+            logger.error(f"Market sentiment analysis failed: {e}")
+            return {'positive': [], 'negative': [], 'neutral': []}
+    
+    def _classify_sentiment(self, article: NewsArticle) -> str:
+        """기사의 감정 분류 (간단한 키워드 기반)"""
+        text = (article.title + " " + article.summary).lower()
+        
+        positive_count = sum(1 for word in self.sentiment_keywords['positive'] if word in text)
+        negative_count = sum(1 for word in self.sentiment_keywords['negative'] if word in text)
+        
+        if positive_count > negative_count:
+            return 'positive'
+        elif negative_count > positive_count:
+            return 'negative'
+        else:
+            return 'neutral'
+    
+    async def get_symbol_specific_news(self, symbol: str, hours: int = 24) -> List[NewsArticle]:
+        """특정 심볼에 대한 뉴스"""
+        keywords = [symbol, f"{symbol} price", f"{symbol} news"]
+        return await self.search_crypto_news(keywords, hours)
+    
+    async def get_breaking_news(self, minutes: int = 30) -> List[NewsArticle]:
+        """최근 속보"""
+        try:
+            # 매우 최근의 높은 참여도 기사들
+            search_query = FeedlySearchQuery(
+                query="cryptocurrency OR bitcoin OR ethereum",
+                count=20,
+                since=datetime.now() - timedelta(minutes=minutes),
+                engagement_min=100,  # 높은 참여도
+                content_types=[FeedlyContentType.ARTICLE, FeedlyContentType.NEWS],
+                language=FeedlyLanguage.ENGLISH
+            )
+            
+            if self.client:
+                feedly_articles = await self.client.search_content(search_query)
+                return [NewsArticle.from_feedly_article(fa) for fa in feedly_articles]
+            
+            return []
+            
+        except Exception as e:
+            logger.error(f"Breaking news search failed: {e}")
+            return []
+    
+    # ========== 통계 및 상태 메서드들 ==========
+    
+    async def get_collection_stats(self) -> Dict[str, Any]:
+        """수집 통계"""
+        if not self.client:
+            return {"status": "offline", "client_available": False}
+        
+        try:
+            health = await self.client.health_check()
+            stats = self.client.get_stats()
+            
+            return {
+                "status": health.get("status", "unknown"),
+                "client_available": True,
+                "api_stats": stats.get("api_stats", {}),
+                "rate_limit": stats.get("rate_limit_status", {}),
+                "cache_size": stats.get("cache_size", 0)
+            }
+            
+        except Exception as e:
+            return {
+                "status": "error",
+                "error": str(e),
+                "client_available": False
+            }
+    
+    async def close(self):
+        """리소스 정리"""
+        if self.client:
+            await self.client.close()
+        
+        # 기존 세션이 있다면 정리
+        if hasattr(self, 'session') and self.session:
+            await self.session.close()
+    
+    async def _parse_article(self, item: Dict[str, Any]) -> Optional[NewsArticle]:
+        """Feedly 아이템을 NewsArticle로 변환"""
+        try:
+            # 기본 정보 추출
+            article_id = item.get('id', '')
+            title = item.get('title', '')
+            
+            # 요약 및 콘텐츠
+            summary = ''
+            content = ''
+            
+            if 'summary' in item:
+                summary = item['summary'].get('content', '')
+            if 'content' in item:
+                content = item['content'].get('content', '')
+            
+            # URL 추출
+            url = ''
+            if 'canonicalUrl' in item:
+                url = item['canonicalUrl']
+            elif 'alternate' in item and item['alternate']:
+                url = item['alternate'][0].get('href', '')
+            
+            # 발행시간
+            published = datetime.fromtimestamp(item.get('published', 0) / 1000)
+            
+            # 소스 정보
+            source = ''
+            if 'origin' in item:
+                source = item['origin'].get('title', '')
+            
+            # 작성자
+            author = item.get('author')
+            
+            # 키워드 추출
+            keywords = self._extract_keywords(title + ' ' + summary)
+            
+            # 참여도 정보
+            engagement = {
+                'shares': item.get('engagement', {}).get('shares', 0),
+                'comments': item.get('engagement', {}).get('comments', 0),
+                'likes': item.get('engagement', {}).get('likes', 0)
+            }
+            
+            return NewsArticle(
+                id=article_id,
+                title=title,
+                summary=summary,
+                content=content,
+                url=url,
+                published=published,
+                source=source,
+                author=author,
+                keywords=keywords,
+                engagement=engagement
+            )
+            
+        except Exception as e:
+            logger.error(f"Failed to parse article: {e}")
+            return None
+    
+    def _extract_keywords(self, text: str) -> List[str]:
+        """텍스트에서 암호화폐 키워드 추출"""
+        if not text:
+            return []
+        
+        text_lower = text.lower()
+        found_keywords = []
+        
+        for keyword in self.crypto_keywords:
+            if keyword in text_lower:
+                found_keywords.append(keyword)
+        
+        return found_keywords
+    
+    def _is_crypto_relevant(self, article: NewsArticle) -> bool:
+        """암호화폐 관련 기사인지 확인"""
+        # 키워드가 있으면 관련
+        if article.keywords:
+            return True
+        
+        # 제목이나 요약에서 키워드 검색
+        text = (article.title + ' ' + article.summary).lower()
+        
+        for keyword in self.crypto_keywords:
+            if keyword in text:
+                return True
+        
+        return False
+    
+    def calculate_basic_sentiment(self, article: NewsArticle) -> Dict[str, float]:
+        """기본적인 감정 점수 계산"""
+        text = (article.title + ' ' + article.summary).lower()
+        
+        positive_count = 0
+        negative_count = 0
+        
+        # 긍정 키워드 카운트
+        for keyword in self.sentiment_keywords['positive']:
+            positive_count += text.count(keyword)
+        
+        # 부정 키워드 카운트
+        for keyword in self.sentiment_keywords['negative']:
+            negative_count += text.count(keyword)
+        
+        total_count = positive_count + negative_count
+        
+        if total_count == 0:
+            sentiment_score = 0.5  # 중립
+        else:
+            sentiment_score = positive_count / total_count
+        
+        # 참여도 가중치 적용
+        engagement_weight = min(1.0, (
+            article.engagement['shares'] * 0.1 +
+            article.engagement['comments'] * 0.05 +
+            article.engagement['likes'] * 0.01
+        ) / 100)
+        
+        return {
+            'sentiment': sentiment_score,
+            'confidence': min(0.8, total_count * 0.1 + engagement_weight),
+            'positive_signals': positive_count,
+            'negative_signals': negative_count,
+            'engagement_weight': engagement_weight
+        }
+    
+    async def get_latest_crypto_news(
+        self,
+        hours_back: int = 24,
+        max_articles: int = 200
+    ) -> List[NewsArticle]:
+        """최신 암호화폐 뉴스 수집"""
+        logger.info(f"Collecting crypto news from last {hours_back} hours...")
+        
+        # 시간 범위 설정
+        since = datetime.now() - timedelta(hours=hours_back)
+        
+        # 암호화폐 피드 가져오기
+        crypto_feeds = await self.get_crypto_feeds()
+        
+        all_articles = []
+        
+        # 각 피드에서 기사 수집
+        for feed in crypto_feeds[:10]:  # 상위 10개 피드만
+            try:
+                articles = await self.get_stream_content(
+                    feed.id,
+                    count=20,
+                    newer_than=since
+                )
+                all_articles.extend(articles)
+                
+                # Rate limit 방지
+                await asyncio.sleep(2)
+                
+            except Exception as e:
+                logger.error(f"Failed to collect from feed {feed.title}: {e}")
+                continue
+        
+        # 중복 제거 (URL 기준)
+        unique_articles = {}
+        for article in all_articles:
+            if article.url and article.url not in unique_articles:
+                unique_articles[article.url] = article
+        
+        # 발행시간 기준 정렬 (최신순)
+        sorted_articles = sorted(
+            unique_articles.values(),
+            key=lambda x: x.published,
+            reverse=True
+        )
+        
+        result = sorted_articles[:max_articles]
+        logger.info(f"Collected {len(result)} unique crypto articles")
+        
+        return result
+    
+    async def get_sentiment_summary(
+        self,
+        articles: List[NewsArticle]
+    ) -> Dict[str, Any]:
+        """기사들의 감정 요약"""
+        if not articles:
+            return {
+                'overall_sentiment': 0.5,
+                'confidence': 0.0,
+                'article_count': 0,
+                'positive_count': 0,
+                'negative_count': 0,
+                'neutral_count': 0
+            }
+        
+        sentiments = []
+        confidences = []
+        positive_count = 0
+        negative_count = 0
+        neutral_count = 0
+        
+        for article in articles:
+            sentiment_data = self.calculate_basic_sentiment(article)
+            sentiment = sentiment_data['sentiment']
+            confidence = sentiment_data['confidence']
+            
+            sentiments.append(sentiment)
+            confidences.append(confidence)
+            
+            if sentiment > 0.6:
+                positive_count += 1
+            elif sentiment < 0.4:
+                negative_count += 1
+            else:
+                neutral_count += 1
+        
+        # 신뢰도 가중 평균
+        if sum(confidences) > 0:
+            weighted_sentiment = sum(s * c for s, c in zip(sentiments, confidences)) / sum(confidences)
+            avg_confidence = sum(confidences) / len(confidences)
+        else:
+            weighted_sentiment = 0.5
+            avg_confidence = 0.0
+        
+        return {
+            'overall_sentiment': weighted_sentiment,
+            'confidence': avg_confidence,
+            'article_count': len(articles),
+            'positive_count': positive_count,
+            'negative_count': negative_count,
+            'neutral_count': neutral_count,
+            'sentiment_distribution': {
+                'positive': positive_count / len(articles),
+                'negative': negative_count / len(articles),
+                'neutral': neutral_count / len(articles)
+            }
+        }
+    
+    async def close(self):
+        """연결 종료"""
+        if self.session:
+            await self.session.close()
+            logger.info("Feedly connection closed")
+
+
+# 팩토리 함수
+def create_feedly_collector(access_token: Optional[str] = None) -> FeedlyCollector:
+    """Feedly 수집기 생성"""
+    return FeedlyCollector(access_token=access_token)

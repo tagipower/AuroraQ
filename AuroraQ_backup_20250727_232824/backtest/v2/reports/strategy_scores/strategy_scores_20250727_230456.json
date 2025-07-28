@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "generated_at": "2025-07-27T23:04:56.542686",
+    "total_strategies": 3,
+    "generator_version": "1.0.0"
+  },
+  "scores": {
+    "SimpleMA": {
+      "strategy_name": "SimpleMA",
+      "total_return": -1249.8165081836755,
+      "roi": -0.0012498165081836754,
+      "annualized_return": -0.0012498165081836754,
+      "sharpe_ratio": -20.6266447079151,
+      "sortino_ratio": -20.6266447079151,
+      "max_drawdown": 0.0012722580720824189,
+      "win_rate": 0.27586206896551724,
+      "profit_factor": 0.17337918283441733,
+      "total_trades": 29,
+      "avg_win": 32.7677697533784,
+      "avg_loss": 151.19586662107028,
+      "consistency_score": 0.0,
+      "composite_score": 0.33724983283900234,
+      "confidence_level": 0.1469858133850274,
+      "volatility": 0.00860425350532361,
+      "calmar_ratio": -0.9823608398396629,
+      "expectancy": -43.09712097185088,
+      "avg_holding_time_hours": 0.9655172413793104,
+      "risk_score": 115.05999060141527,
+      "reward_score": 9.930687423740235,
+      "stability_score": 37.14554838558352,
+      "overall_grade": "F"
+    },
+    "RSIStrategy": {
+      "strategy_name": "RSIStrategy",
+      "total_return": -459.4672479507531,
+      "roi": -0.0004594672479507531,
+      "annualized_return": -0.0004594672479507531,
+      "sharpe_ratio": -38.88921221126995,
+      "sortino_ratio": -38.88921221126995,
+      "max_drawdown": 0.0005613384475630972,
+      "win_rate": 0.21052631578947367,
+      "profit_factor": 0.5089295777803128,
+      "total_trades": 38,
+      "avg_win": 59.522133161292544,
+      "avg_loss": 58.47776957756834,
+      "consistency_score": 0.0,
+      "composite_score": 0.34238728099635973,
+      "confidence_level": 0.1107466035209593,
+      "volatility": 0.0020029429451703276,
+      "calmar_ratio": -0.8185208940264272,
+      "expectancy": -12.091243367125083,
+      "avg_holding_time_hours": 0.543859649122807,
+      "risk_score": 205.02717172190688,
+      "reward_score": 14.169425505892317,
+      "stability_score": 42.68773231048738,
+      "overall_grade": "F"
+    },
+    "DummyStrategy": {
+      "strategy_name": "DummyStrategy",
+      "total_return": -315.5481553984067,
+      "roi": -0.00031554815539840673,
+      "annualized_return": -0.00031554815539840673,
+      "sharpe_ratio": -5.201356363592007,
+      "sortino_ratio": NaN,
+      "max_drawdown": 0.0006708170186092611,
+      "win_rate": 0.21428571428571427,
+      "profit_factor": 0.5666073471356852,
+      "total_trades": 28,
+      "avg_win": 68.75670443503714,
+      "avg_loss": 80.89870911206994,
+      "consistency_score": 0.0,
+      "composite_score": 0.3462249139321819,
+      "confidence_level": 0.10212321701189422,
+      "volatility": 0.011489131565469244,
+      "calmar_ratio": -0.47039378346810823,
+      "expectancy": -11.269576978514525,
+      "avg_holding_time_hours": 0.9166666666666666,
+      "risk_score": 38.065560062085055,
+      "reward_score": 15.272771432017347,
+      "stability_score": 36.665836596278155,
+      "overall_grade": "D"
+    }
+  },
+  "summary": {
+    "grade_distribution": {
+      "F": 2,
+      "D": 1
+    },
+    "best_strategy": {
+      "name": "DummyStrategy",
+      "grade": "D",
+      "composite_score": 0.3462249139321819,
+      "roi": -0.00031554815539840673
+    },
+    "worst_strategy": {
+      "name": "SimpleMA",
+      "grade": "F",
+      "composite_score": 0.33724983283900234,
+      "roi": -0.0012498165081836754
+    },
+    "averages": {
+      "roi": -0.000674943970510945,
+      "sharpe_ratio": -21.572404427592357,
+      "max_drawdown": 0.0008348045127515924,
+      "win_rate": 0.2335580330135684
+    }
+  }
+}

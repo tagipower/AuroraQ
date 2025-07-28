@@ -1,0 +1,47 @@
+- name: trend_breakout
+  start: 2024-12-01
+  end: 2025-01-01
+  conditions:
+    - duration: "5~15"
+    - sentiment_score: ">0"          # 완화: 원래 >0.5
+    - regime_score: ">0.3"           # 완화: 원래 >0.7
+
+- name: volatility_spike
+  start: 2024-12-10
+  end: 2024-12-20
+  conditions:
+    - duration: "10~20"
+    - volume_spike: ">1500000"       # 완화: 원래 >2000000
+    - sentiment_score: "<0"          # 완화: 원래 <-0.5
+
+- name: neutral_market
+  start: 2024-12-15
+  end: 2025-01-01
+  conditions:
+    - duration: "20~40"
+    - sentiment_score: "between -0.3,0.3"   # 완화: 원래 -0.2~0.2
+    - regime_score: "between 0.2,0.8"       # 완화: 원래 0.3~0.7
+
+- name: sharp_crash
+  start: 2024-12-05
+  end: 2024-12-08
+  conditions:
+    - duration: "5~15"
+    - close_drop: ">3"               # 완화: 원래 >5
+    - sentiment_score: "<-0.3"       # 완화: 원래 <-0.7
+
+- name: sideway_consolidation
+  start: 2024-12-18
+  end: 2025-01-01
+  conditions:
+    - duration: "30~60"
+    - volatility: "<3"               # 완화: 원래 <1
+    - regime_score: "between 0.3,0.7"
+
+- name: high_volatility_trend
+  start: 2024-12-22
+  end: 2025-01-01
+  conditions:
+    - duration: "10~30"
+    - volatility: ">1"               # 완화: 원래 >3
+    - sentiment_score: ">-0.2"       # 완화: 원래 >0.3

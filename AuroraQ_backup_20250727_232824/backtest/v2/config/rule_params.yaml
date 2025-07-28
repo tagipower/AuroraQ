@@ -1,0 +1,61 @@
+# config/rule_params.yaml (신규 생성)
+
+RuleA:
+  adx_threshold: 20
+  bb_window: 20
+  bb_std: 2
+  ema_short_len: 8
+  ema_long_len: 21
+  entry_wait_sec: 900
+  entry_fallback_pct: 0.005
+  take_profit_pct: 0.015
+  stop_loss_pct: 0.01
+  max_hold_bars: 5
+
+RuleB:
+  ma_short_len: 5
+  ma_long_len: 30
+  ema60_len: 60
+  ema120_len: 120
+  volume_spike_ratio: 1.8
+  rsi_period: 15
+  rsi_threshold: 65
+  sentiment_threshold: 0.25
+  entry_fallback_pct: 0.005
+  entry_wait_sec: 900
+  take_profit_pct: 0.018
+  stop_loss_pct: 0.009
+  max_hold_sec: 1800
+
+
+RuleC:
+  bb_window: 20
+  bb_std: 2
+  sentiment_threshold: 0.4
+  sentiment_prev_threshold: 0.5
+  sentiment_drop_min: 0.15
+  entry_cooldown_sec: 300
+  max_entries: 2
+  stop_loss_pct: 1.03
+  volatility_spike_ratio: 2.0
+  rebound_sentiment_jump: 0.25
+  rebound_candle_count: 2
+
+RuleD:
+  volatility_ratio_entry: 1.5
+  sentiment_entry_threshold: 0.2
+  regime_entry_threshold: 0.3
+  trend_condition: "long"
+  stop_loss_pct: 0.03
+  take_profit_pct: 0.05
+  exit_sentiment_drop: 0.2
+  volatility_ratio_exit: 2.0
+  max_hold_bars: 30
+
+RuleE:
+  range_std_threshold: 0.002
+  volume_spike_ratio: 1.2
+  sentiment_threshold: 0.2
+  take_profit_pct: 0.02
+  stop_loss_pct: 0.008
+  max_hold_bars: 5

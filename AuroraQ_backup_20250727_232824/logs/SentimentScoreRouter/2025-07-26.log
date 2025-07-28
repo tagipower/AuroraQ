@@ -1,0 +1,8 @@
+[2025-07-26 18:42:39] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.7311
+[2025-07-26 18:42:39] [INFO] [SentimentScoreRouter] [Router] 📄 백테스트용 감정 점수 로더 로드 완료: test_backtest_data.csv
+[2025-07-26 18:42:39] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.6608
+[2025-07-26 18:42:39] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.6608
+[2025-07-26 18:42:40] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.5000
+[2025-07-26 18:42:41] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.7311
+[2025-07-26 18:42:42] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.6608
+[2025-07-26 18:42:43] [INFO] [SentimentScoreRouter] [Router] Live 분석 완료 - 점수: 0.5000

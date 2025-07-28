@@ -1,0 +1,164 @@
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] 
+=== Rule Strategy A 수동 백테스트 ===
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 38142.73, 수량: 2.621732
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 38736.89, 손익: 1557.74 (1.56%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 38776.45, 수량: 2.619057
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 39393.64, 손익: 1616.45 (1.59%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 39673.41, 수량: 2.600588
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 40283.26, 손익: 1585.96 (1.54%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 40596.84, 수량: 2.580500
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 41446.92, 손익: 2193.64 (2.09%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 41723.73, 수량: 2.563380
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 42536.16, 손익: 2082.55 (1.95%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 42756.97, 수량: 2.550142
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 43702.46, 손익: 2411.13 (2.21%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 44053.95, 수량: 2.529795
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 44800.10, 손익: 1887.60 (1.69%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 45085.59, 수량: 2.513776
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 46059.82, 손익: 2449.01 (2.16%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 46915.58, 수량: 2.467924
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 47732.53, 손익: 2016.16 (1.74%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 48063.23, 수량: 2.450943
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 49103.21, 손익: 2548.92 (2.16%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 49300.82, 수량: 2.441119
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 50053.62, 손익: 1837.69 (1.53%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 50599.75, 수량: 2.414772
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 51456.57, 손익: 2069.02 (1.69%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 51677.45, 수량: 2.404451
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 52704.81, 손익: 2470.23 (1.99%)
+[2025-07-26 23:29:08] [INFO] [ManualBacktest]   완료: 신호 13개, 거래 13개
+[2025-07-26 23:29:08] [INFO] [ManualBacktest]   수익률: 26.73%, 승률: 100.0%
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] 
+=== Rule Strategy B 수동 백테스트 ===
+[2025-07-26 23:29:08] [INFO] [ManualBacktest]   완료: 신호 0개, 거래 0개
+[2025-07-26 23:29:08] [INFO] [ManualBacktest]   수익률: 0.00%, 승률: 0.0%
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] 
+=== Rule Strategy C 수동 백테스트 ===
+[2025-07-26 23:29:08] [INFO] [ManualBacktest]   완료: 신호 2개, 거래 0개
+[2025-07-26 23:29:08] [INFO] [ManualBacktest]   수익률: 0.00%, 승률: 0.0%
+[2025-07-26 23:29:08] [INFO] [ManualBacktest] 
+=== Rule Strategy D 수동 백테스트 ===
+[2025-07-26 23:29:09] [INFO] [ManualBacktest]   완료: 신호 0개, 거래 0개
+[2025-07-26 23:29:09] [INFO] [ManualBacktest]   수익률: 0.00%, 승률: 0.0%
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] 
+=== Rule Strategy E 수동 백테스트 ===
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 38887.33, 수량: 2.571532
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 39673.41, 손익: 2021.42 (2.02%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 39940.65, 수량: 2.554325
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 40796.13, 손익: 2185.17 (2.14%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 43130.22, 수량: 2.416092
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 44053.95, 손익: 2231.82 (2.14%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 44800.10, 수량: 2.375852
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 45705.00, 손익: 2149.90 (2.02%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 46059.82, 수량: 2.357549
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 47062.89, 손익: 2364.77 (2.18%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 47310.20, 수량: 2.345225
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 48495.50, 손익: 2779.78 (2.51%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 48669.62, 수량: 2.336835
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 49648.40, 손익: 2287.25 (2.01%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 49861.32, 수량: 2.326856
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 50896.82, 손익: 2409.44 (2.08%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 51192.20, 수량: 2.313430
+[2025-07-26 23:29:09] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 52704.81, 손익: 3499.31 (2.95%)
+[2025-07-26 23:29:09] [INFO] [ManualBacktest]   완료: 신호 9개, 거래 9개
+[2025-07-26 23:29:09] [INFO] [ManualBacktest]   수익률: 21.93%, 승률: 100.0%
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 38543.07, 수량: 2.594500
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 39444.31, 손익: 2338.26 (2.34%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 39621.89, 수량: 2.582872
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 40587.31, 손익: 2493.56 (2.44%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 40562.62, 수량: 2.584444
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 41436.22, 손익: 2257.77 (2.15%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 41672.77, 수량: 2.569774
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 42502.61, 손익: 2132.51 (1.99%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 42735.11, 수량: 2.555793
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 43652.21, 손익: 2343.90 (2.15%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 44299.44, 수량: 2.518452
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 45160.61, 손익: 2168.82 (1.94%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 45675.94, 수량: 2.490038
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 46552.14, 손익: 2181.78 (1.92%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 47308.40, 수량: 2.450233
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 48208.92, 손익: 2206.49 (1.90%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 48663.24, 수량: 2.427358
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 49785.71, 손익: 2724.64 (2.31%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 50190.77, 수량: 2.407768
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 51370.65, 손익: 2840.89 (2.35%)
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 51663.50, 수량: 2.394120
+[2025-07-26 23:51:41] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 52401.35, 손익: 1766.50 (1.43%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] 
+=== Rule Strategy A 수동 백테스트 ===
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 38212.24, 수량: 2.616962
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 38816.07, 손익: 1580.20 (1.58%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 39073.46, 수량: 2.599724
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 39929.23, 손익: 2224.76 (2.19%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 39981.16, 수량: 2.596347
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 40849.28, 손익: 2253.93 (2.17%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 41002.94, 수량: 2.586616
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 41672.31, 손익: 1731.40 (1.63%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 41901.79, 수량: 2.572451
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 42686.26, 손익: 2018.01 (1.87%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 42828.57, 수량: 2.563903
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 43744.29, 손익: 2347.82 (2.14%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 44095.71, 수량: 2.543470
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 44964.74, 손익: 2210.37 (1.97%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 45106.21, 수량: 2.535493
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 45838.13, 손익: 1855.76 (1.62%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 46172.56, 수량: 2.517128
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 47079.05, 손익: 2281.74 (1.96%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 47342.55, 수량: 2.503118
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 48103.00, 손익: 1903.48 (1.61%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 48492.19, 수량: 2.483028
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 49352.78, 손익: 2136.87 (1.77%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 49573.90, 수량: 2.471953
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 50485.36, 손익: 2253.10 (1.84%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 51123.20, 수량: 2.441112
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 52122.42, 손익: 2439.22 (1.95%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매수: 52400.52, 수량: 2.428157
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy A] 매도: 52558.58, 손익: 383.79 (0.30%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   완료: 신호 14개, 거래 14개
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   수익률: 27.62%, 승률: 100.0%
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] 
+=== Rule Strategy B 수동 백테스트 ===
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 38472.64, 수량: 2.599250
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 39351.84, 손익: 2285.27 (2.29%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 39396.24, 수량: 2.596321
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 40199.30, 손익: 2085.02 (2.04%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy B] 매수: 40512.97, 수량: 2.576219
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy B] 매도: 41443.43, 손익: 2397.07 (2.30%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   완료: 신호 3개, 거래 3개
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   수익률: 6.77%, 승률: 100.0%
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] 
+=== Rule Strategy C 수동 백테스트 ===
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   완료: 신호 2개, 거래 0개
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   수익률: 0.00%, 승률: 0.0%
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] 
+=== Rule Strategy D 수동 백테스트 ===
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy D] 매수: 38816.07, 수량: 2.576252
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy D] 매도: 39665.15, 손익: 2187.44 (2.19%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy D] 매수: 39929.23, 수량: 2.559214
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy D] 매도: 40849.28, 손익: 2354.61 (2.30%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   완료: 신호 2개, 거래 2개
+[2025-07-26 23:53:47] [INFO] [ManualBacktest]   수익률: 4.54%, 승률: 100.0%
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] 
+=== Rule Strategy E 수동 백테스트 ===
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 39073.46, 수량: 2.559282
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 39929.23, 손익: 2190.15 (2.19%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 40199.30, 수량: 2.542088
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 41147.05, 손익: 2409.24 (2.36%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 41443.43, 수량: 2.523908
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 42347.89, 손익: 2282.78 (2.18%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 42686.26, 수량: 2.503901
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 43744.29, 손익: 2649.20 (2.48%)
+[2025-07-26 23:53:47] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 44224.27, 수량: 2.476726
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 45127.21, 손익: 2236.34 (2.04%)
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 45475.01, 수량: 2.457783
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 46505.27, 손익: 2532.15 (2.27%)
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 47727.49, 수량: 2.394844
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 48800.30, 손익: 2569.22 (2.25%)
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 49573.90, 수량: 2.357472
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 50648.98, 손익: 2534.47 (2.17%)
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 51017.56, 수량: 2.340440
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 51561.99, 손익: 1274.22 (1.07%)
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매수: 52558.58, 수량: 2.296063
+[2025-07-26 23:53:48] [INFO] [ManualBacktest] [Rule Strategy E] 매도: 52558.58, 손익: 0.00 (0.00%)
+[2025-07-26 23:53:48] [INFO] [ManualBacktest]   완료: 신호 10개, 거래 10개
+[2025-07-26 23:53:48] [INFO] [ManualBacktest]   수익률: 20.68%, 승률: 90.0%

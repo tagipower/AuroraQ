@@ -1,0 +1,32 @@
+# 📁 config/strategy_config.yaml
+
+RuleStrategyA:
+  sentiment_bonus: 0.03
+  regime_bonus:
+    neutral: 0.03
+  time_penalty:
+    3: -0.02
+    4: -0.02
+
+RuleStrategyB:
+  sentiment_bonus: 0.00
+  regime_bonus: {}
+  time_penalty: {}
+
+RuleStrategyC:
+  sentiment_bonus: 0.00
+  regime_bonus: {}
+  time_penalty:
+    3: -0.05
+    4: -0.05
+
+RuleStrategyD:
+  sentiment_bonus: -0.05
+  regime_bonus: {}
+  time_penalty: {}
+
+PPO:
+  sentiment_bonus: 0.00
+  regime_bonus:
+    neutral: 0.05
+  time_penalty: {}

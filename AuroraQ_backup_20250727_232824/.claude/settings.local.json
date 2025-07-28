@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(robocopy:*)",
+      "Bash(xcopy:*)",
+      "Bash(cp:*)",
+      "Bash(pip install:*)",
+      "Bash(SuperClaude --version)",
+      "Bash(SuperClaude --help)",
+      "Bash(mkdir:*)",
+      "Bash(taskkill:*)",
+      "Bash(touch:*)"
+    ],
+    "deny": []
+  }
+}

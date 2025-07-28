@@ -1,0 +1,42 @@
+[
+  {
+    "strategy_name": "Rule Strategy A",
+    "total_reward": 0.0,
+    "total_steps": 499,
+    "total_trades": 0,
+    "avg_reward_per_step": 0.0,
+    "trades": []
+  },
+  {
+    "strategy_name": "Rule Strategy B",
+    "total_reward": 0.0,
+    "total_steps": 499,
+    "total_trades": 0,
+    "avg_reward_per_step": 0.0,
+    "trades": []
+  },
+  {
+    "strategy_name": "Rule Strategy C",
+    "total_reward": 0.0,
+    "total_steps": 499,
+    "total_trades": 0,
+    "avg_reward_per_step": 0.0,
+    "trades": []
+  },
+  {
+    "strategy_name": "Rule Strategy D",
+    "total_reward": 0.0,
+    "total_steps": 499,
+    "total_trades": 0,
+    "avg_reward_per_step": 0.0,
+    "trades": []
+  },
+  {
+    "strategy_name": "Rule Strategy E",
+    "total_reward": 0.0,
+    "total_steps": 499,
+    "total_trades": 0,
+    "avg_reward_per_step": 0.0,
+    "trades": []
+  }
+]

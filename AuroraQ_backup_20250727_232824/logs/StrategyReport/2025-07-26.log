@@ -1,0 +1,10 @@
+[2025-07-26 23:32:13] [INFO] [StrategyReport] 백테스트 결과 로드: manual_backtest_20250726_232909.json
+[2025-07-26 23:32:14] [INFO] [StrategyReport] 자산 곡선 차트 저장: report/strategy_analysis\equity_curves.png
+[2025-07-26 23:32:14] [INFO] [StrategyReport] 성과 비교 차트 저장: report/strategy_analysis\performance_comparison.png
+[2025-07-26 23:32:15] [INFO] [StrategyReport] 거래 분석 차트 저장: report/strategy_analysis\trades_analysis.png
+[2025-07-26 23:32:15] [INFO] [StrategyReport] HTML 리포트 저장: report/strategy_analysis\backtest_report.html
+[2025-07-26 23:54:57] [INFO] [StrategyReport] 백테스트 결과 로드: manual_backtest_20250726_235348.json
+[2025-07-26 23:54:57] [INFO] [StrategyReport] 자산 곡선 차트 저장: report/strategy_analysis\equity_curves.png
+[2025-07-26 23:54:58] [INFO] [StrategyReport] 성과 비교 차트 저장: report/strategy_analysis\performance_comparison.png
+[2025-07-26 23:54:58] [INFO] [StrategyReport] 거래 분석 차트 저장: report/strategy_analysis\trades_analysis.png
+[2025-07-26 23:54:58] [INFO] [StrategyReport] HTML 리포트 저장: report/strategy_analysis\backtest_report.html

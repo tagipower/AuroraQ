@@ -1,0 +1,73 @@
+{
+  "single_backtest_example": {
+    "name": "example_single",
+    "price_data_path": "data/price_data.csv",
+    "sentiment_data_path": "data/sentiment_data.csv",
+    "initial_capital": 1000000,
+    "mode": "normal",
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "window_size": 100,
+    "enable_multiframe": true,
+    "enable_exploration": false,
+    "enable_ppo": true,
+    "cache_size": 1000,
+    "indicators": ["sma_20", "sma_50", "rsi", "macd", "bbands", "atr"]
+  },
+  
+  "exploration_backtest": {
+    "name": "exploration_test",
+    "price_data_path": "data/price_data.csv",
+    "sentiment_data_path": "data/sentiment_data.csv",
+    "initial_capital": 1000000,
+    "mode": "exploration",
+    "window_size": 50,
+    "enable_multiframe": true,
+    "enable_exploration": true,
+    "enable_ppo": true,
+    "cache_size": 500,
+    "indicators": ["sma_20", "rsi", "volatility"]
+  },
+  
+  "validation_backtest": {
+    "name": "validation_test",
+    "price_data_path": "data/price_data.csv",
+    "sentiment_data_path": "data/sentiment_data.csv",
+    "initial_capital": 1000000,
+    "mode": "validation",
+    "window_size": 200,
+    "enable_multiframe": false,
+    "enable_exploration": false,
+    "enable_ppo": false,
+    "cache_size": 2000,
+    "indicators": ["sma_20", "sma_50", "ema_12", "ema_26", "rsi", "macd"]
+  },
+  
+  "multiple_backtest_configs": [
+    {
+      "name": "multi_test_1",
+      "price_data_path": "data/price_data.csv",
+      "initial_capital": 1000000,
+      "mode": "normal",
+      "window_size": 50,
+      "indicators": ["sma_20", "rsi"]
+    },
+    {
+      "name": "multi_test_2", 
+      "price_data_path": "data/price_data.csv",
+      "initial_capital": 1000000,
+      "mode": "normal",
+      "window_size": 100,
+      "indicators": ["sma_50", "macd"]
+    },
+    {
+      "name": "multi_test_3",
+      "price_data_path": "data/price_data.csv", 
+      "initial_capital": 1000000,
+      "mode": "exploration",
+      "window_size": 75,
+      "enable_exploration": true,
+      "indicators": ["rsi", "bbands", "atr"]
+    }
+  ]
+}

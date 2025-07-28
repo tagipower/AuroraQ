@@ -1,0 +1,132 @@
+{
+  "timestamp": "20250727_005947",
+  "summary": {
+    "RuleStrategyA": {
+      "strategy": "RuleStrategyA",
+      "total_trades": 2,
+      "winning_trades": 2,
+      "win_rate": 100.0,
+      "avg_pnl": 0.1897,
+      "total_pnl": 0.3793,
+      "max_gain": 0.2721,
+      "max_loss": 0.1072,
+      "avg_hold_periods": 1.0,
+      "exit_reasons": {
+        "sentiment_negative": 2
+      }
+    },
+    "RuleStrategyB": {
+      "strategy": "RuleStrategyB",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    },
+    "RuleStrategyC": {
+      "strategy": "RuleStrategyC",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    },
+    "RuleStrategyD": {
+      "strategy": "RuleStrategyD",
+      "total_trades": 1,
+      "winning_trades": 1,
+      "win_rate": 100.0,
+      "avg_pnl": 0.2721,
+      "total_pnl": 0.2721,
+      "max_gain": 0.2721,
+      "max_loss": 0.2721,
+      "avg_hold_periods": 1.0,
+      "exit_reasons": {
+        "sentiment_drop": 1
+      }
+    },
+    "RuleStrategyE": {
+      "strategy": "RuleStrategyE",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    }
+  },
+  "signals": {
+    "RuleStrategyA": [
+      {
+        "timestamp": "2024-11-05 20:15:00",
+        "strategy": "RuleStrategyA",
+        "signal_type": "ENTER",
+        "price": 45824.22,
+        "confidence": 0.6439985600747596,
+        "reason": "EMA크로스(1.002), 강한추세(ADX:18.1)"
+      },
+      {
+        "timestamp": "2024-11-17 20:15:00",
+        "strategy": "RuleStrategyA",
+        "signal_type": "ENTER",
+        "price": 43846.34,
+        "confidence": 0.0,
+        "reason": "EMA크로스(1.000), 강한추세(ADX:16.5)"
+      }
+    ],
+    "RuleStrategyB": [],
+    "RuleStrategyC": [],
+    "RuleStrategyD": [
+      {
+        "timestamp": "2024-11-17 20:15:00",
+        "strategy": "RuleStrategyD",
+        "signal_type": "ENTER",
+        "price": 43846.34,
+        "confidence": 0.8636778211728626,
+        "reason": "변동성증가(1.61), 긍정감정, 상승추세, 거래량(1.3x)"
+      }
+    ],
+    "RuleStrategyE": []
+  },
+  "positions": {
+    "RuleStrategyA": [
+      {
+        "strategy": "RuleStrategyA",
+        "entry_time": "2024-11-05 20:15:00",
+        "exit_time": "2024-11-05 16:10:00",
+        "entry_price": 45824.22,
+        "exit_price": 45873.35,
+        "pnl_pct": 0.10721404532362444,
+        "exit_reason": "sentiment_negative",
+        "hold_periods": 1
+      },
+      {
+        "strategy": "RuleStrategyA",
+        "entry_time": "2024-11-17 20:15:00",
+        "exit_time": "2024-11-17 16:10:00",
+        "entry_price": 43846.34,
+        "exit_price": 43965.65,
+        "pnl_pct": 0.272109371044436,
+        "exit_reason": "sentiment_negative",
+        "hold_periods": 1
+      }
+    ],
+    "RuleStrategyB": [],
+    "RuleStrategyC": [],
+    "RuleStrategyD": [
+      {
+        "strategy": "RuleStrategyD",
+        "entry_time": "2024-11-17 20:15:00",
+        "exit_time": "2024-11-17 16:10:00",
+        "entry_price": 43846.34,
+        "exit_price": 43965.65,
+        "pnl_pct": 0.272109371044436,
+        "exit_reason": "sentiment_drop",
+        "hold_periods": 1
+      }
+    ],
+    "RuleStrategyE": []
+  }
+}

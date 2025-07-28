@@ -1,0 +1,141 @@
+2025-07-27 20:10:56,090 - backtest.v2.layers.controller_layer - INFO - 기존 시스템 연동 실패 - 독립 모드로 실행: cannot import name 'StatePreprocessor' from 'core.state_preprocessor' (C:\Users\경남교육청\Desktop\AuroraQ\core\state_preprocessor.py)
+2025-07-27 20:10:56,094 - __main__ - INFO - 백테스트 시스템 임포트 성공
+2025-07-27 20:10:56,098 - __main__ - INFO - === AuroraQ 백테스트 시작 ===
+2025-07-27 20:10:56,099 - __main__ - INFO - 가격 데이터: ../../data/btc_5m_sample.csv
+2025-07-27 20:10:56,099 - __main__ - INFO - 감정 데이터: ../../data/sample/sample_sentiment_data.csv
+2025-07-27 20:10:56,100 - __main__ - INFO - 초기 자본: 1,000,000.0
+2025-07-27 20:10:56,101 - __main__ - INFO - 모드: normal
+2025-07-27 20:10:56,101 - __main__ - INFO - 윈도우 크기: 100
+2025-07-27 20:10:56,101 - __main__ - INFO - 전략 시스템 초기화 중...
+2025-07-27 20:10:56,101 - backtest.v2.layers.controller_layer - INFO - 기존 전략 시스템 없음 - 독립 모드로 실행
+2025-07-27 20:10:56,123 - backtest.v2.integration.strategy_adapter - INFO - 전략 등록 완료: RuleStrategyA
+2025-07-27 20:10:56,127 - backtest.v2.integration.strategy_adapter - INFO - 전략 등록 완료: RuleStrategyB
+2025-07-27 20:10:56,134 - backtest.v2.integration.strategy_adapter - INFO - 전략 등록 완료: RuleStrategyC
+2025-07-27 20:10:56,138 - backtest.v2.integration.strategy_adapter - INFO - 전략 등록 완료: RuleStrategyD
+2025-07-27 20:10:56,142 - backtest.v2.integration.strategy_adapter - INFO - 전략 등록 완료: RuleStrategyE
+2025-07-27 20:10:56,142 - backtest.v2.integration.strategy_adapter - INFO - 등록된 전략 수: 5
+2025-07-27 20:10:56,142 - backtest.v2.integration.strategy_adapter - INFO - 등록된 전략들: ['RuleStrategyA', 'RuleStrategyB', 'RuleStrategyC', 'RuleStrategyD', 'RuleStrategyE']
+2025-07-27 20:10:56,142 - backtest.v2.layers.controller_layer - INFO - 실제 전략 시스템 초기화 완료: 5개 전략
+2025-07-27 20:10:56,142 - backtest.v2.layers.controller_layer - INFO - 등록된 전략들: ['RuleStrategyA', 'RuleStrategyB', 'RuleStrategyC', 'RuleStrategyD', 'RuleStrategyE']
+2025-07-27 20:10:56,143 - __main__ - INFO - 백테스트 실행 중...
+2025-07-27 20:10:56,143 - backtest.v2.layers.controller_layer - INFO - 데이터 로드 중...
+2025-07-27 20:10:56,156 - backtest.v2.layers.data_layer - INFO - 가격 데이터 로드 완료: 1000개 레코드
+2025-07-27 20:10:56,163 - backtest.v2.layers.data_layer - INFO - 감정 데이터 로드 완료: 720개 레코드
+2025-07-27 20:10:56,164 - backtest.v2.layers.controller_layer - INFO - 데이터 로드 완료: 1000개 레코드
+2025-07-27 20:10:56,216 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,252 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,298 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,333 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,370 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,398 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,429 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:10:56,467 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,157 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,182 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,205 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,225 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,248 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,271 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,293 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,318 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,338 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,360 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,383 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,407 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,433 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,455 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,477 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,502 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,524 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,546 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,572 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,593 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,612 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,633 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,656 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,679 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,705 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,724 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,736 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,759 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,780 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,802 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,821 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,844 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,870 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,890 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,917 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,943 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,969 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:02,992 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,017 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,042 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,069 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,095 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,121 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,145 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,171 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,199 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,227 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,256 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,280 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,311 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,340 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,366 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,392 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,419 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,445 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,474 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,497 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,519 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,544 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,572 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,593 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,622 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,647 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,677 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,707 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,731 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,756 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,784 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,808 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,838 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,868 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,896 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,921 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,945 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:03,972 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,003 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,035 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,066 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,099 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,128 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,164 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,201 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,233 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,261 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,293 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,317 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,346 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,374 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,401 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,426 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,453 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,478 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,504 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,528 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,556 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:04,582 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:11:20,341 - __main__ - INFO - === 백테스트 완료 ===
+2025-07-27 20:11:20,341 - __main__ - INFO - 실행 시간: 24.20초
+2025-07-27 20:11:20,341 - __main__ - INFO - 총 신호: 900
+2025-07-27 20:11:20,341 - __main__ - INFO - 실행된 거래: 0
+2025-07-27 20:11:20,341 - __main__ - INFO - 탐색 거래: 0
+2025-07-27 20:11:20,342 - __main__ - INFO - 평균 처리 시간: 26.80ms
+2025-07-27 20:11:20,342 - __main__ - INFO - 
+=== 생성된 보고서 ===
+2025-07-27 20:11:20,342 - __main__ - INFO - 
+=== 캐시 통계 ===
+2025-07-27 20:11:20,342 - __main__ - INFO - 히트율: 1.8%
+2025-07-27 20:11:20,342 - __main__ - INFO - 캐시 크기: 999
+2025-07-27 20:11:20,343 - __main__ - INFO - 백테스트가 성공적으로 완료되었습니다.

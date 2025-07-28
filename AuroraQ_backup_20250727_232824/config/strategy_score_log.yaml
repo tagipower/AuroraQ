@@ -1,0 +1,9 @@
+strategy_scores:
+  - name: RuleStrategyA
+    score: 0.75
+    win_rate: 0.68
+    sharpe_ratio: 1.25
+  - name: PPO
+    score: 0.81
+    win_rate: 0.72
+    sharpe_ratio: 1.45

@@ -1,0 +1,9 @@
+{
+  "PPO": {
+    "avg_profit": 0.0,
+    "max_drawdown": 0.0698,
+    "win_rate": 0,
+    "stability": 0.1734,
+    "recent_performance": 0.0
+  }
+}

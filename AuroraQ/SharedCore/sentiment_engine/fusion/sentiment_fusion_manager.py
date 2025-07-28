@@ -14,7 +14,7 @@ import asyncio
 
 # Import analyzer
 from ..analyzers.finbert_analyzer import FinBERTAnalyzer, SentimentResult
-from ..news_collectors.feedly_collector import NewsArticle
+from ...data_collection.base_collector import NewsArticle
 
 logger = logging.getLogger(__name__)
 

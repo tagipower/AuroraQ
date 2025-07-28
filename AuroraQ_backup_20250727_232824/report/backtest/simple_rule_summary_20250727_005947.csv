@@ -1,0 +1,6 @@
+strategy,total_trades,winning_trades,win_rate,avg_pnl,total_pnl,max_gain,max_loss,avg_hold_periods,exit_reasons
+RuleStrategyA,2,2.0,100.0,0.1897,0.3793,0.2721,0.1072,1.0,{'sentiment_negative': 2}
+RuleStrategyB,0,,0.0,0.0,0.0,0.0,0.0,,
+RuleStrategyC,0,,0.0,0.0,0.0,0.0,0.0,,
+RuleStrategyD,1,1.0,100.0,0.2721,0.2721,0.2721,0.2721,1.0,{'sentiment_drop': 1}
+RuleStrategyE,0,,0.0,0.0,0.0,0.0,0.0,,

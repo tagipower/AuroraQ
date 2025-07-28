@@ -1,0 +1,21 @@
+[Unit]
+Description=AuroraQ Backup Service
+Documentation=https://github.com/your-org/AuroraQ
+
+[Service]
+Type=oneshot
+User=auroaq
+Group=auroaq
+WorkingDirectory=/opt/AuroraQ
+
+# Environment variables
+Environment=PYTHONPATH=/opt/AuroraQ
+Environment=AURORA_ENV=production
+
+# Backup command
+ExecStart=/opt/AuroraQ/venv/bin/python /opt/AuroraQ/scripts/logging_backup_system.py --backup-only
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=auroaq-backup

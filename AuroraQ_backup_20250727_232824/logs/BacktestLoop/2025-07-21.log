@@ -1,0 +1,137 @@
+[2025-07-21 20:15:17] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 통합 전략 백테스트 시작
+[2025-07-21 20:15:17] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:15:17] [ERROR] [BacktestLoop] ❌ 감정 점수 로드 실패: [Errno 2] No such file or directory: 'data/sentiment/news_sentiment_log.csv'
+[2025-07-21 20:15:17] [ERROR] [BacktestLoop] ❌ 데이터 부족으로 백테스트 종료
+[2025-07-21 20:19:19] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 통합 전략 백테스트 시작
+[2025-07-21 20:19:19] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:19:19] [ERROR] [BacktestLoop] ❌ 감정 점수 로드 실패: [Errno 2] No such file or directory: 'data/sentiment/news_sentiment_log.csv'
+[2025-07-21 20:19:19] [ERROR] [BacktestLoop] ❌ 데이터 부족으로 백테스트 종료
+[2025-07-21 20:20:03] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 통합 전략 백테스트 시작
+[2025-07-21 20:20:03] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:20:03] [INFO] [BacktestLoop] ✅ 감정 점수 데이터 로드 완료: 500건
+[2025-07-21 20:20:54] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 통합 전략 백테스트 시작
+[2025-07-21 20:20:54] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:20:54] [INFO] [BacktestLoop] ✅ 감정 점수 데이터 로드 완료: 500건
+[2025-07-21 20:20:56] [ERROR] [BacktestLoop] ⚠️ 종합 리포트 생성 실패: 'strategy'
+[2025-07-21 20:20:56] [INFO] [BacktestLoop] 📈 백테스트 완료. 최종 전략 점수: {}
+[2025-07-21 20:25:43] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 20:25:43] [ERROR] [BacktestLoop] ❌ 가격 데이터 로드 실패: [Errno 2] No such file or directory: 'data/price/sample_price.csv'
+[2025-07-21 20:30:40] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 20:30:40] [ERROR] [BacktestLoop] ❌ 가격 데이터 로드 실패: [Errno 2] No such file or directory: 'backtest_data.csv'
+[2025-07-21 20:39:57] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 20:39:57] [ERROR] [BacktestLoop] ❌ 가격 데이터 로드 실패: [Errno 2] No such file or directory: 'backtest_data.csv'
+[2025-07-21 20:41:18] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 20:41:18] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 0): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 1): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 2): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 3): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 4): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 5): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 6): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 7): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 8): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 9): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 10): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 11): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 12): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 13): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 14): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 15): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 16): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 17): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 18): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 19): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 20): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 21): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 22): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 23): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 24): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 25): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 26): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 27): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 28): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 29): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 30): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 31): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 32): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 33): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 34): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 35): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 36): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 37): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 38): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 39): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 40): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 41): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 42): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 43): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 44): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 45): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 46): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 47): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 48): cannot add indices of unequal length
+[2025-07-21 20:41:19] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 49): cannot add indices of unequal length
+[2025-07-21 20:41:19] [INFO] [BacktestLoop] 📄 백테스트 결과 저장 완료: report/backtest/backtest_results.csv
+[2025-07-21 20:44:06] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 20:44:06] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 0): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 1): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 2): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 3): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 4): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 5): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 6): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 7): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 8): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 9): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 10): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 11): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 12): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 13): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 14): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 15): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 16): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 17): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 18): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 19): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 20): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 21): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 22): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 23): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 24): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 25): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 26): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 27): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 28): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 29): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 30): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 31): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 32): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 33): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 34): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 35): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 36): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 37): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 38): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 39): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 40): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 41): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 42): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 43): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 44): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 45): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 46): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 47): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 48): cannot add indices of unequal length
+[2025-07-21 20:44:07] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 49): cannot add indices of unequal length
+[2025-07-21 20:44:07] [INFO] [BacktestLoop] 📄 백테스트 결과 저장 완료: report/backtest/backtest_results.csv
+[2025-07-21 20:55:57] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 20:55:57] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 20:55:58] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 2): ⚠️ PPO 점수 기준 미달 및 대체 전략 실패
+[2025-07-21 20:55:58] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 28): ⚠️ PPO 점수 기준 미달 및 대체 전략 실패
+[2025-07-21 20:55:58] [ERROR] [BacktestLoop] ⚠️ 백테스트 중 전략 실행 실패 (index 44): ⚠️ PPO 점수 기준 미달 및 대체 전략 실패
+[2025-07-21 20:55:58] [INFO] [BacktestLoop] 📄 백테스트 결과 저장 완료: report/backtest/backtest_results.csv
+[2025-07-21 21:00:06] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] 3원칙 기반 통합 전략 백테스트 시작
+[2025-07-21 21:00:06] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: 50건
+[2025-07-21 21:00:08] [INFO] [BacktestLoop] 📄 백테스트 결과 저장 완료: report/backtest/backtest_results.csv

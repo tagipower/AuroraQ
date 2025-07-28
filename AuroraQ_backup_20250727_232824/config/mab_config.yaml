@@ -1,0 +1,9 @@
+# config/mab_config.yaml
+
+epsilon: 0.15
+initial_scores:
+  RuleStrategyA: 0.5
+  RuleStrategyB: 0.6
+  RuleStrategyC: 0.4
+  RuleStrategyD: 0.3
+  PPOStrategy: 0.2

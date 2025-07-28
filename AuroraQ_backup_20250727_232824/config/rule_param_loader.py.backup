@@ -1,0 +1,11 @@
+import yaml
+import os
+
+def get_rule_params(rule_name: str):
+    path = os.path.join("config", "rule_params.yaml")
+    
+    # ✅ 인코딩 명시적으로 지정
+    with open(path, "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    return config.get(rule_name, {})

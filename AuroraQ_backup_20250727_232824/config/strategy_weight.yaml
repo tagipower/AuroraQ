@@ -1,0 +1,21 @@
+# config/strategy_weight.yaml
+
+strategy_weights:
+  rule_a: 0.95
+  rule_b: 1.00
+  rule_c: 0.90
+  rule_d: 0.90
+  rule_e: 1.00
+  ppo: 1.10
+
+regime_weights:
+  bull: 1.00
+  bear: 0.85
+  sideway: 0.95
+
+sentiment_weights:
+  positive: 1.05
+  negative: 0.85
+  neutral: 1.00
+
+ppo_min_score_threshold: 0.5

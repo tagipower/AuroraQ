@@ -1,0 +1,6 @@
+﻿Strategy,Status,Signals,Trades,Return (%),Win Rate (%),Max DD (%),Profit Factor,Avg Win,Avg Loss
+Rule Strategy A,SUCCESS,14,14,27.62,100.0,0.54,inf,1973.0,0
+Rule Strategy B,SUCCESS,3,3,6.77,100.0,0.39,inf,2256.0,0
+Rule Strategy C,SUCCESS,2,0,0.0,0.0,0.0,0.0,0.0,0
+Rule Strategy D,SUCCESS,2,2,4.54,100.0,0.0,inf,2271.0,0
+Rule Strategy E,SUCCESS,10,10,20.68,90.0,0.0,inf,2298.0,0

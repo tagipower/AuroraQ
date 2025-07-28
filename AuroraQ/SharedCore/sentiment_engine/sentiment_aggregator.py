@@ -12,7 +12,7 @@ import json
 import os
 
 from .batch_processor import BatchSentimentProcessor
-from .news_collectors.feedly_collector import FeedlyCollector, create_feedly_collector
+from .news_collectors.news_collector import NewsCollector, create_news_collector
 from .routing.sentiment_router import get_router, SentimentRouter  
 from .fusion.sentiment_fusion_manager import get_fusion_manager
 from .analyzers.finbert_analyzer import get_finbert_analyzer

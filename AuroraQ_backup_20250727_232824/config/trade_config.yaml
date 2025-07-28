@@ -1,0 +1,16 @@
+execution:
+  description: 주문 실행 모드
+  mode: simulated
+fee:
+  description: 왕복 기준 수수료율
+  exchange: binance
+  rate: 0.0005
+  type: percentage
+risk:
+  default_leverage: 1.0
+  description: 최대/기본 레버리지 설정
+  max_leverage: 3.0
+slippage:
+  description: 매수/매도 체결 시 가격 이탈 허용 비율
+  mode: fixed
+  rate: 0.001

@@ -1,0 +1,18 @@
+[2025-07-26 23:26:09] [INFO] [RealBacktest] 실제 백테스트 환경 테스트 시작
+[2025-07-26 23:26:09] [INFO] [RealBacktest] 실제 시장 데이터 로드 중...
+[2025-07-26 23:26:09] [INFO] [RealBacktest] 실제 데이터 로드 완료: 8929개
+[2025-07-26 23:26:10] [INFO] [RealBacktest] 
+=== Rule Strategy A 백테스트 ===
+[2025-07-26 23:26:10] [INFO] [RealBacktest]   완료: 499스텝, 보상: 0.0000, 거래: 0개
+[2025-07-26 23:26:10] [INFO] [RealBacktest] 
+=== Rule Strategy B 백테스트 ===
+[2025-07-26 23:26:10] [INFO] [RealBacktest]   완료: 499스텝, 보상: 0.0000, 거래: 0개
+[2025-07-26 23:26:10] [INFO] [RealBacktest] 
+=== Rule Strategy C 백테스트 ===
+[2025-07-26 23:26:10] [INFO] [RealBacktest]   완료: 499스텝, 보상: 0.0000, 거래: 0개
+[2025-07-26 23:26:10] [INFO] [RealBacktest] 
+=== Rule Strategy D 백테스트 ===
+[2025-07-26 23:26:10] [INFO] [RealBacktest]   완료: 499스텝, 보상: 0.0000, 거래: 0개
+[2025-07-26 23:26:10] [INFO] [RealBacktest] 
+=== Rule Strategy E 백테스트 ===
+[2025-07-26 23:26:10] [INFO] [RealBacktest]   완료: 499스텝, 보상: 0.0000, 거래: 0개

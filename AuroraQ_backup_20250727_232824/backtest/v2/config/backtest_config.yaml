@@ -1,0 +1,90 @@
+# AuroraQ 백테스트 설정 파일
+
+# 기본 설정
+default:
+  initial_capital: 1000000
+  window_size: 100
+  mode: normal
+  enable_multiframe: true
+  enable_exploration: false
+  cache_size: 1000
+  enable_ppo: false
+
+# 데이터 경로
+data:
+  price_data: "data/btc_5m_sample.csv"
+  sentiment_data: "data/sentiment_sample.csv"
+
+# 지표 설정
+indicators:
+  - "sma_20"
+  - "sma_50" 
+  - "ema_12"
+  - "ema_26"
+  - "rsi"
+  - "macd"
+  - "macd_line"
+  - "macd_signal"
+  - "macd_hist"
+  - "bbands"
+  - "bollinger"
+  - "bb_upper"
+  - "bb_middle"
+  - "bb_lower"
+  - "atr"
+  - "adx"
+  - "volatility"
+
+# 백테스트 모드별 설정
+modes:
+  normal:
+    enable_exploration: false
+    enable_ppo: false
+    
+  exploration:
+    enable_exploration: true
+    enable_ppo: false
+    
+  validation:
+    enable_exploration: false
+    enable_ppo: true
+    window_size: 200
+    
+  walk_forward:
+    enable_exploration: false
+    enable_ppo: true
+    window_size: 150
+
+# 출력 설정
+output:
+  directory: "reports/backtest"
+  formats: ["csv", "json"]
+  include_plots: true
+
+# 성능 설정
+performance:
+  parallel_workers: 4
+  max_memory_usage: "2GB"
+  enable_caching: true
+
+# 전략별 설정
+strategies:
+  RuleStrategyA:
+    enabled: true
+    weight: 1.0
+    
+  RuleStrategyB:
+    enabled: true
+    weight: 1.0
+    
+  RuleStrategyC:
+    enabled: true
+    weight: 1.0
+    
+  RuleStrategyD:
+    enabled: true
+    weight: 1.0
+    
+  RuleStrategyE:
+    enabled: true
+    weight: 1.0

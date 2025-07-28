@@ -1,0 +1,20 @@
+[2025-07-26 23:20:49] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:22:28] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:22:28] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:24:51] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:24:51] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:26:10] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:29:08] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:36:42] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:36:42] [INFO] [RuleStrategyD] [RuleStrategyD] 진입 신호 | 가격: 40754.49 | 크기: 1.05 | 신뢰도: 0.75 | 변동성: 0.66 | 감정: 0.93
+[2025-07-26 23:36:42] [INFO] [RuleStrategyD] [RuleStrategyD] 스케일인 | 가격: 41599.28 | 추가: 0.50 | 총 크기: 1.55
+[2025-07-26 23:36:42] [INFO] [RuleStrategyD] [RuleStrategyD] 스케일인 | 가격: 42951.20 | 추가: 0.50 | 총 크기: 2.05
+[2025-07-26 23:36:42] [INFO] [RuleStrategyD] [RuleStrategyD] 스케일인 | 가격: 46853.94 | 추가: 0.50 | 총 크기: 2.55
+[2025-07-26 23:36:42] [INFO] [RuleStrategyD] [RuleStrategyD] 스케일인 | 가격: 45621.37 | 추가: 0.45 | 총 크기: 3.00
+[2025-07-26 23:38:30] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:38:30] [INFO] [RuleStrategyD] [RuleStrategyD] 진입 신호 | 가격: 40613.19 | 크기: 0.83 | 신뢰도: 0.66 | 변동성: 1.04 | 감정: 0.76
+[2025-07-26 23:40:47] [INFO] [RuleStrategyD] RuleStrategyD 초기화: Vol(20/30), Sentiment(0.2), TP/SL(5.0%/3.0%)
+[2025-07-26 23:51:19] [INFO] [RuleStrategyD] RuleStrategyD 초기화: 변동성(1.5), 감정(0.2), 체제(0.3)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyD] RuleStrategyD 초기화: 변동성(1.5), 감정(0.2), 체제(0.3)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyD] [RuleStrategyD] 진입 신호 | 가격: 38816.07 | 신뢰도: 0.94 | 변동성: 1.63 | 감정: 0.66 | 체제: 0.00
+[2025-07-26 23:53:47] [INFO] [RuleStrategyD] [RuleStrategyD] 진입 신호 | 가격: 39929.23 | 신뢰도: 0.84 | 변동성: 1.72 | 감정: 0.86 | 체제: 0.00

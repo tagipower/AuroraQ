@@ -1,0 +1,30 @@
+[2025-07-26 23:20:49] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:22:28] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:22:28] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:24:51] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:24:51] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:26:10] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 38887.33 | 신뢰도: 1.00 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.0%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 39940.65 | 신뢰도: 1.00 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 43130.22 | 신뢰도: 0.97 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 44800.10 | 신뢰도: 0.95 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.3%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 46059.82 | 신뢰도: 0.95 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 47310.20 | 신뢰도: 0.93 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.1%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 48669.62 | 신뢰도: 0.97 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.1%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 49861.32 | 신뢰도: 0.95 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:29:09] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 51192.20 | 신뢰도: 0.95 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.1%
+[2025-07-26 23:51:19] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyE] RuleStrategyE 초기화: Breakout(10/20/50), Range(0.002), TP/SL(2.0%/0.8%)
+[2025-07-26 23:53:47] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 39073.46 | 신뢰도: 0.99 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.1%
+[2025-07-26 23:53:47] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 40199.30 | 신뢰도: 1.00 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:53:47] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 41443.43 | 신뢰도: 0.92 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:53:47] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 42686.26 | 신뢰도: 0.98 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.1%
+[2025-07-26 23:53:47] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 44224.27 | 신뢰도: 0.98 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.4%
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 45475.01 | 신뢰도: 0.98 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.3%
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 47727.49 | 신뢰도: 0.95 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 49573.90 | 신뢰도: 0.99 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 청산 신호 | 이유: macd_bearish | PnL: 2.17% | 최고 PnL: 2.17% | 보유시간: 0초
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 51017.56 | 신뢰도: 0.95 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.1%
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 청산 신호 | 이유: macd_bearish | PnL: 1.07% | 최고 PnL: 1.07% | 보유시간: 0초
+[2025-07-26 23:53:48] [INFO] [RuleStrategyE] [RuleStrategyE] 진입 신호 | 가격: 52558.58 | 신뢰도: 0.92 | 브레이크아웃: 1.00 | TP: 5.0%, SL: 1.2%

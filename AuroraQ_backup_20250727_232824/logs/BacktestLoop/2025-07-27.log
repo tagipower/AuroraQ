@@ -1,0 +1,46 @@
+[2025-07-27 08:47:30] [INFO] [BacktestLoop] 백테스트 루프 시작
+[2025-07-27 08:47:30] [INFO] [BacktestLoop] StrategySelector 초기화 완료: C:\Users\경남교육청\Desktop\AuroraQ\data\sentiment\news_sentiment_log.csv
+[2025-07-27 08:47:30] [INFO] [BacktestLoop] 백테스트 범위: 0 ~ 1000 (총 1000개 중 1000개 처리)
+[2025-07-27 08:47:30] [INFO] [BacktestLoop] 진행률: 0.0% (0/1000)
+[2025-07-27 08:47:30] [INFO] [BacktestLoop] 진행률: 10.0% (100/1000)
+[2025-07-27 08:47:31] [INFO] [BacktestLoop] 진행률: 20.0% (200/1000)
+[2025-07-27 08:47:32] [INFO] [BacktestLoop] 진행률: 30.0% (300/1000)
+[2025-07-27 08:47:32] [INFO] [BacktestLoop] 진행률: 40.0% (400/1000)
+[2025-07-27 08:47:33] [INFO] [BacktestLoop] 진행률: 50.0% (500/1000)
+[2025-07-27 08:47:34] [INFO] [BacktestLoop] 진행률: 60.0% (600/1000)
+[2025-07-27 08:47:35] [INFO] [BacktestLoop] 진행률: 70.0% (700/1000)
+[2025-07-27 08:47:35] [INFO] [BacktestLoop] 진행률: 80.0% (800/1000)
+[2025-07-27 08:47:36] [INFO] [BacktestLoop] 진행률: 90.0% (900/1000)
+[2025-07-27 08:47:37] [INFO] [BacktestLoop] 백테스트 완료: 1000개 결과 생성
+[2025-07-27 08:48:46] [INFO] [BacktestLoop] 백테스트 루프 시작
+[2025-07-27 08:48:47] [INFO] [BacktestLoop] StrategySelector 초기화 완료: C:\Users\경남교육청\Desktop\AuroraQ\data\sentiment\news_sentiment_log.csv
+[2025-07-27 08:48:47] [INFO] [BacktestLoop] 백테스트 범위: 0 ~ 20 (총 50개 중 20개 처리)
+[2025-07-27 08:48:47] [INFO] [BacktestLoop] 진행률: 0.0% (0/20)
+[2025-07-27 08:48:47] [INFO] [BacktestLoop] 백테스트 완료: 20개 결과 생성
+[2025-07-27 10:11:32] [INFO] [BacktestLoop] 📊 [BACKTEST LOOP] AuroraQ 통합 전략 백테스트 시작
+[2025-07-27 10:11:32] [INFO] [BacktestLoop] ✅ 가격 데이터 로드 완료: data/price/backtest_data.csv (1000건)
+[2025-07-27 10:11:32] [INFO] [BacktestLoop] ✅ 감정 데이터 파일 확인: C:\Users\경남교육청\Desktop\AuroraQ\data\sentiment\news_sentiment_log.csv
+[2025-07-27 10:11:32] [INFO] [BacktestLoop] 백테스트 루프 시작
+[2025-07-27 10:11:33] [INFO] [BacktestLoop] StrategySelector 초기화 완료: C:\Users\경남교육청\Desktop\AuroraQ\data\sentiment\news_sentiment_log.csv
+[2025-07-27 10:11:33] [INFO] [BacktestLoop] 백테스트 범위: 0 ~ 1000 (총 1000개 중 1000개 처리)
+[2025-07-27 10:11:33] [INFO] [BacktestLoop] 진행률: 0.0% (0/1000)
+[2025-07-27 10:11:34] [INFO] [BacktestLoop] 진행률: 10.0% (100/1000)
+[2025-07-27 10:11:35] [INFO] [BacktestLoop] 진행률: 20.0% (200/1000)
+[2025-07-27 10:11:36] [INFO] [BacktestLoop] 진행률: 30.0% (300/1000)
+[2025-07-27 10:11:36] [INFO] [BacktestLoop] 진행률: 40.0% (400/1000)
+[2025-07-27 10:11:37] [INFO] [BacktestLoop] 진행률: 50.0% (500/1000)
+[2025-07-27 10:11:38] [INFO] [BacktestLoop] 진행률: 60.0% (600/1000)
+[2025-07-27 10:11:39] [INFO] [BacktestLoop] 진행률: 70.0% (700/1000)
+[2025-07-27 10:11:39] [INFO] [BacktestLoop] 진행률: 80.0% (800/1000)
+[2025-07-27 10:11:40] [INFO] [BacktestLoop] 진행률: 90.0% (900/1000)
+[2025-07-27 10:11:41] [INFO] [BacktestLoop] 백테스트 완료: 1000개 결과 생성
+[2025-07-27 10:11:41] [INFO] [BacktestLoop] 백테스트 결과 저장 완료: report/backtest/backtest_results.csv
+[2025-07-27 10:11:41] [INFO] [BacktestLoop] 저장된 레코드 수: 1000
+[2025-07-27 10:11:41] [INFO] [BacktestLoop] 결과 요약:
+[2025-07-27 10:11:41] [INFO] [BacktestLoop]   - 사용된 전략: {'RuleStrategyA': 1000}
+[2025-07-27 10:11:41] [INFO] [BacktestLoop]   - 평균 조정 점수: 0.0000
+[2025-07-27 10:11:41] [INFO] [BacktestLoop]   - 평균 감정 점수: 0.5000
+[2025-07-27 10:11:41] [INFO] [BacktestLoop]   - 평균 ROI: 0.0000
+[2025-07-27 10:11:41] [INFO] [BacktestLoop]   - 평균 Sharpe: 0.0000
+[2025-07-27 10:11:41] [WARNING] [BacktestLoop] 백테스트 리포트 생성 실패: "Column(s) ['composite_score'] do not exist"
+[2025-07-27 10:11:41] [INFO] [BacktestLoop] ✅ 백테스트 완료: report/backtest/backtest_results.csv

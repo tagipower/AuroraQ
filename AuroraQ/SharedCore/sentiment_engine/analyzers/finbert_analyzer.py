@@ -13,7 +13,7 @@ from datetime import datetime
 import numpy as np
 
 # Import news article structure
-from ..news_collectors.feedly_collector import NewsArticle
+from ...data_collection.base_collector import NewsArticle
 
 logger = logging.getLogger(__name__)
 

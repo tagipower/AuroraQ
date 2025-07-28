@@ -1,0 +1,89 @@
+{
+  "timestamp": "20250727_004201",
+  "summary": {
+    "RuleStrategyA": {
+      "strategy": "RuleStrategyA",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    },
+    "RuleStrategyB": {
+      "strategy": "RuleStrategyB",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    },
+    "RuleStrategyC": {
+      "strategy": "RuleStrategyC",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    },
+    "RuleStrategyD": {
+      "strategy": "RuleStrategyD",
+      "total_trades": 1,
+      "winning_trades": 1,
+      "win_rate": 100.0,
+      "avg_pnl": 0.2721,
+      "total_pnl": 0.2721,
+      "max_gain": 0.2721,
+      "max_loss": 0.2721,
+      "avg_hold_periods": 1.0,
+      "exit_reasons": {
+        "sentiment_drop": 1
+      }
+    },
+    "RuleStrategyE": {
+      "strategy": "RuleStrategyE",
+      "total_trades": 0,
+      "win_rate": 0,
+      "avg_pnl": 0,
+      "total_pnl": 0,
+      "max_gain": 0,
+      "max_loss": 0
+    }
+  },
+  "signals": {
+    "RuleStrategyA": [],
+    "RuleStrategyB": [],
+    "RuleStrategyC": [],
+    "RuleStrategyD": [
+      {
+        "timestamp": "2024-11-17 20:15:00",
+        "strategy": "RuleStrategyD",
+        "signal_type": "ENTER",
+        "price": 43846.34,
+        "confidence": 0.8636778211728626,
+        "reason": "변동성증가(1.61), 긍정감정, 상승추세, 거래량(1.3x)"
+      }
+    ],
+    "RuleStrategyE": []
+  },
+  "positions": {
+    "RuleStrategyA": [],
+    "RuleStrategyB": [],
+    "RuleStrategyC": [],
+    "RuleStrategyD": [
+      {
+        "strategy": "RuleStrategyD",
+        "entry_time": "2024-11-17 20:15:00",
+        "exit_time": "2024-11-17 16:10:00",
+        "entry_price": 43846.34,
+        "exit_price": 43965.65,
+        "pnl_pct": 0.272109371044436,
+        "exit_reason": "sentiment_drop",
+        "hold_periods": 1
+      }
+    ],
+    "RuleStrategyE": []
+  }
+}

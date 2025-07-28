@@ -1,0 +1,111 @@
+# Optimized Rule Strategy Parameters
+# Based on backtest performance analysis
+# Primary Goals: Improve win rate (13.51% -> 25%+), Better profit factor (0.15 -> 0.5+)
+
+RuleE:
+  # === ENTRY SIGNAL OPTIMIZATION ===
+  # More selective entry conditions to reduce false signals
+  
+  # Breakout Settings - More conservative approach
+  breakout_window_short: 12      # 8 -> 12 (longer confirmation period)
+  breakout_window_medium: 20     # 15 -> 20 (stronger trend confirmation)  
+  breakout_window_long: 35       # 30 -> 35 (long-term trend filter)
+  breakout_buffer: 0.002         # 0.0015 -> 0.002 (require stronger breakout)
+  
+  # Range/Volatility - Tighter criteria
+  range_window: 10               # 15 -> 10 (more responsive to recent volatility)
+  range_std_threshold: 0.0015    # 0.002 -> 0.0015 (stricter range detection)
+  range_atr_threshold: 0.003     # 0.004 -> 0.003 (tighter ATR threshold)
+  squeeze_window: 30             # 25 -> 30 (longer volatility baseline)
+  expansion_ratio: 2.2           # 1.8 -> 2.2 (require stronger expansion)
+  
+  # Volume Confirmation - Stronger requirements  
+  volume_window: 10              # 8 -> 10 (better volume trend)
+  volume_spike_ratio: 2.0        # 1.5 -> 2.0 (require significant volume spike)
+  volume_ma_window: 20           # 15 -> 20 (smoother volume baseline)
+  obv_window: 15                 # 12 -> 15 (better OBV trend)
+  min_volume_ratio: 1.5          # 1.2 -> 1.5 (higher minimum volume)
+  
+  # === MOMENTUM INDICATORS OPTIMIZATION ===
+  # Improved RSI and MACD settings
+  
+  # RSI Settings - More conservative
+  rsi_window: 14                 # Keep standard
+  rsi_breakout_threshold: 60     # 55 -> 60 (stronger momentum required)
+  rsi_overbought: 75             # New: avoid entries near overbought
+  rsi_oversold: 25               # New: avoid entries near oversold
+  
+  # MACD Settings - Better signal filtering
+  macd_fast: 12                  # Keep standard
+  macd_slow: 26                  # Keep standard  
+  macd_signal: 9                 # Keep standard
+  macd_hist_threshold: 0.0001    # New: minimum histogram value for entry
+  
+  # Momentum Strength
+  momentum_window: 8             # 5 -> 8 (longer momentum confirmation)
+  momentum_threshold: 0.008      # 0.005 -> 0.008 (stronger momentum required)
+  min_confidence: 0.8            # 0.75 -> 0.8 (higher confidence threshold)
+  
+  # === RISK MANAGEMENT OPTIMIZATION ===
+  # Better risk/reward ratios
+  
+  # Take Profit - Adjusted for better R:R
+  take_profit_pct: 0.025         # 0.03 -> 0.025 (slightly lower but more achievable)
+  vol_multiplier_tp: 2.0         # 2.5 -> 2.0 (less volatility adjustment)
+  
+  # Stop Loss - Tighter to preserve capital
+  stop_loss_pct: 0.012           # 0.018 -> 0.012 (tighter stop, better R:R)
+  vol_multiplier_sl: 1.5         # 1.8 -> 1.5 (less volatility adjustment)
+  
+  # Position Management
+  max_hold_bars: 8               # 6 -> 8 (allow more time for trades to work)
+  trailing_stop_activation: 0.012 # 0.015 -> 0.012 (earlier trailing activation)
+  trailing_stop_distance: 0.006  # 0.008 -> 0.006 (tighter trailing distance)
+  
+  # === MARKET STRUCTURE FILTERS ===
+  # Better trend and support/resistance analysis
+  
+  support_resistance_window: 120  # 100 -> 120 (longer S/R history)
+  sr_touch_threshold: 0.0005     # 0.0008 -> 0.0005 (more precise S/R levels)
+  trend_filter_window: 60        # 50 -> 60 (longer trend assessment)
+  
+  # === RE-ENTRY CONTROLS ===
+  # Stricter re-entry to avoid overtrading
+  
+  enable_reentry: false          # Keep disabled for now
+  reentry_cooldown: 900          # 600 -> 900 (longer cooldown)
+  max_reentries: 1               # Keep conservative
+  
+  # === ADDITIONAL FILTERS ===
+  # New filters to improve signal quality
+  
+  # Multi-timeframe confirmation
+  require_higher_tf_trend: true  # New: require alignment with higher timeframe
+  higher_tf_period: 100          # New: period for higher timeframe trend
+  
+  # Market regime filter
+  enable_regime_filter: true     # New: avoid trading in choppy markets
+  regime_window: 50              # New: period for regime detection
+  min_trend_strength: 0.3        # New: minimum trend strength to trade
+  
+  # Volatility filter
+  max_volatility_threshold: 0.08 # New: avoid trading in extreme volatility
+  min_volatility_threshold: 0.005 # New: avoid trading in dead markets
+  
+  # Time-based filters
+  avoid_market_open_minutes: 30  # New: avoid first 30 minutes
+  avoid_market_close_minutes: 30 # New: avoid last 30 minutes
+
+# Performance Targets
+performance_targets:
+  target_win_rate: 0.35          # Target 35% win rate
+  target_profit_factor: 0.6      # Target 0.6 profit factor  
+  target_sharpe: 0.5             # Target 0.5 Sharpe ratio
+  max_drawdown_limit: 0.15       # Maximum 15% drawdown
+  
+# Optimization Notes:
+# 1. Reduced entry frequency with higher quality signals
+# 2. Improved risk/reward ratio (2.08:1 instead of 1.67:1)
+# 3. Added multi-timeframe and regime filters
+# 4. Tighter stop losses with better trailing logic
+# 5. Stronger volume and momentum requirements

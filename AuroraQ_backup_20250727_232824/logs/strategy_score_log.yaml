@@ -1,0 +1,13 @@
+- metrics:
+    baseline_roi: 0.0
+    mdd: 0.0
+    profit_factor: 0.0
+    reward_shaping_score: 0.0
+    roi: 0.0
+    sharpe: 0.0
+    trade_count: 0
+    volatility: 0.0
+    win_rate: 0.0
+  strategy: RuleStrategyC
+  timestamp: '2025-07-27 10:11:41'
+  total_score: 0

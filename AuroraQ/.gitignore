@@ -64,6 +64,8 @@ secrets.yaml
 .coverage
 .pytest_cache/
 htmlcov/
+test_*.py
+diagnose_*.py
 
 # Jupyter Notebook
 .ipynb_checkpoints

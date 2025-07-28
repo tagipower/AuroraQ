@@ -1,0 +1,266 @@
+2025-07-27 20:04:15,738 - backtest.v2.layers.controller_layer - INFO - 기존 시스템 연동 실패 - 독립 모드로 실행: cannot import name 'StatePreprocessor' from 'core.state_preprocessor' (C:\Users\경남교육청\Desktop\AuroraQ\core\state_preprocessor.py)
+2025-07-27 20:04:15,740 - __main__ - INFO - 백테스트 시스템 임포트 성공
+2025-07-27 20:04:15,741 - __main__ - INFO - === AuroraQ 백테스트 시작 ===
+2025-07-27 20:04:15,741 - __main__ - INFO - 가격 데이터: ../../data/btc_5m_sample.csv
+2025-07-27 20:04:15,741 - __main__ - INFO - 감정 데이터: ../../data/sample/sample_sentiment_data.csv
+2025-07-27 20:04:15,748 - __main__ - INFO - 초기 자본: 1,000,000.0
+2025-07-27 20:04:15,748 - __main__ - INFO - 모드: normal
+2025-07-27 20:04:15,748 - __main__ - INFO - 윈도우 크기: 100
+2025-07-27 20:04:15,748 - __main__ - INFO - 전략 시스템 초기화 중...
+2025-07-27 20:04:15,748 - backtest.v2.layers.controller_layer - INFO - 기존 전략 시스템 없음 - 독립 모드로 실행
+2025-07-27 20:04:15,748 - backtest.v2.integration.strategy_adapter - ERROR - 전략 RuleStrategyA 등록 실패: [Errno 2] No such file or directory: 'config/enhanced_strategy_filters.yaml'
+2025-07-27 20:04:15,748 - backtest.v2.integration.strategy_adapter - ERROR - 전략 RuleStrategyB 등록 실패: [Errno 2] No such file or directory: 'config/enhanced_strategy_filters.yaml'
+2025-07-27 20:04:15,749 - backtest.v2.integration.strategy_adapter - ERROR - 전략 RuleStrategyC 등록 실패: [Errno 2] No such file or directory: 'config/enhanced_strategy_filters.yaml'
+2025-07-27 20:04:15,749 - backtest.v2.integration.strategy_adapter - ERROR - 전략 RuleStrategyD 등록 실패: [Errno 2] No such file or directory: 'config/enhanced_strategy_filters.yaml'
+2025-07-27 20:04:15,749 - backtest.v2.integration.strategy_adapter - ERROR - 전략 RuleStrategyE 등록 실패: [Errno 2] No such file or directory: 'config/enhanced_strategy_filters.yaml'
+2025-07-27 20:04:15,749 - backtest.v2.integration.strategy_adapter - INFO - 등록된 전략 수: 0
+2025-07-27 20:04:15,749 - backtest.v2.integration.strategy_adapter - INFO - 등록된 전략들: []
+2025-07-27 20:04:15,750 - backtest.v2.layers.controller_layer - WARNING - 등록된 전략이 없습니다. 기본 더미 전략을 사용합니다.
+2025-07-27 20:04:15,750 - backtest.v2.layers.controller_layer - INFO - 대체 더미 전략 시스템 초기화 완료: 3개 전략
+2025-07-27 20:04:15,750 - __main__ - INFO - 백테스트 실행 중...
+2025-07-27 20:04:15,750 - backtest.v2.layers.controller_layer - INFO - 데이터 로드 중...
+2025-07-27 20:04:15,758 - backtest.v2.layers.data_layer - INFO - 가격 데이터 로드 완료: 1000개 레코드
+2025-07-27 20:04:15,761 - backtest.v2.layers.data_layer - INFO - 감정 데이터 로드 완료: 720개 레코드
+2025-07-27 20:04:15,761 - backtest.v2.layers.controller_layer - INFO - 데이터 로드 완료: 1000개 레코드
+2025-07-27 20:04:15,789 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:15,802 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:15,818 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:15,828 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:15,899 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:15,910 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:15,990 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,006 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,017 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,028 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,048 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,059 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,068 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,078 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,104 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,124 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,147 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,159 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,199 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,210 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,236 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,266 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,288 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,320 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,374 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,394 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,404 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,415 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,428 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,448 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,467 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,477 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,509 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,519 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,541 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,558 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,601 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,613 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,646 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,655 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,724 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:16,776 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,786 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,835 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:16,874 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,008 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,031 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,042 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,099 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,128 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,140 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,162 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,180 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,213 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,226 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,276 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,307 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,325 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,335 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,355 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,391 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,402 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,463 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,497 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,547 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,558 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,614 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,625 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,695 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,731 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,744 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,795 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,808 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,828 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,839 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,849 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,879 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,890 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,901 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,921 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:17,931 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,962 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,974 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:17,986 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,008 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,019 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,028 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,039 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,059 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,080 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,101 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,158 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,173 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,183 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,205 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,249 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,260 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,270 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,280 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,304 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,313 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,324 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,335 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,344 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,356 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,369 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,378 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,430 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,441 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,461 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,526 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,557 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,569 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,593 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,606 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,621 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,633 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,644 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,663 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,683 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,705 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,715 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,726 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,751 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,762 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,803 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,817 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,869 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,881 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,893 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:18,906 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,927 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:18,946 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,005 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,026 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,050 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,071 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,090 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,113 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,134 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,158 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,170 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,219 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,231 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,244 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,256 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,292 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,309 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,331 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,343 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,356 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,381 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,405 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,419 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,431 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,442 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,452 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,473 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,489 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,499 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,522 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,629 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,640 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,650 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,660 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,680 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,703 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,716 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,747 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,761 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,803 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,860 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,873 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:19,921 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:19,937 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,001 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,027 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,048 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,269 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,338 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,356 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,419 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,500 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,536 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,558 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,572 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,587 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,699 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,719 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,772 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,794 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,873 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,935 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:20,976 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:20,988 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,011 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,022 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:21,042 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:21,080 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,127 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:21,138 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:21,168 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,196 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,208 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,225 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:21,255 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:21,323 - backtest.v2.layers.signal_layer - ERROR - 신호 처리 오류: 'hold'
+2025-07-27 20:04:21,343 - backtest.v2.layers.controller_layer - ERROR - 신호 처리 오류: name 'calculated_indicators' is not defined
+2025-07-27 20:04:25,572 - backtest.v2.layers.evaluation_layer - INFO - CSV 보고서 생성: reports/backtest\DummyStrategy_20250727_200425_trades.csv, reports/backtest\DummyStrategy_20250727_200425_metrics.csv
+2025-07-27 20:04:25,574 - backtest.v2.layers.evaluation_layer - INFO - JSON 보고서 생성: reports/backtest\DummyStrategy_20250727_200425_report.json
+2025-07-27 20:04:25,577 - backtest.v2.layers.evaluation_layer - INFO - CSV 보고서 생성: reports/backtest\RSIStrategy_20250727_200425_trades.csv, reports/backtest\RSIStrategy_20250727_200425_metrics.csv
+2025-07-27 20:04:25,579 - backtest.v2.layers.evaluation_layer - INFO - JSON 보고서 생성: reports/backtest\RSIStrategy_20250727_200425_report.json
+2025-07-27 20:04:25,582 - backtest.v2.layers.evaluation_layer - INFO - CSV 보고서 생성: reports/backtest\SimpleMA_20250727_200425_trades.csv, reports/backtest\SimpleMA_20250727_200425_metrics.csv
+2025-07-27 20:04:25,584 - backtest.v2.layers.evaluation_layer - INFO - JSON 보고서 생성: reports/backtest\SimpleMA_20250727_200425_report.json
+2025-07-27 20:04:25,587 - __main__ - INFO - === 백테스트 완료 ===
+2025-07-27 20:04:25,587 - __main__ - INFO - 실행 시간: 9.84초
+2025-07-27 20:04:25,588 - __main__ - INFO - 총 신호: 900
+2025-07-27 20:04:25,588 - __main__ - INFO - 실행된 거래: 97
+2025-07-27 20:04:25,588 - __main__ - INFO - 탐색 거래: 0
+2025-07-27 20:04:25,588 - __main__ - INFO - 평균 처리 시간: 10.86ms
+2025-07-27 20:04:25,588 - __main__ - INFO - 
+=== 최고 성과 전략: DummyStrategy ===
+2025-07-27 20:04:25,588 - __main__ - INFO - ROI: -100.00%
+2025-07-27 20:04:25,588 - __main__ - INFO - 샤프 비율: -9023.43
+2025-07-27 20:04:25,588 - __main__ - INFO - 승률: 0.0%
+2025-07-27 20:04:25,588 - __main__ - INFO - 최대 드로우다운: 958.60%
+2025-07-27 20:04:25,588 - __main__ - INFO - 종합 점수: 0.061
+2025-07-27 20:04:25,588 - __main__ - INFO - 총 거래: 32
+2025-07-27 20:04:25,588 - __main__ - INFO - 
+=== 생성된 보고서 ===
+2025-07-27 20:04:25,588 - __main__ - INFO - DummyStrategy_csv: reports/backtest\DummyStrategy_20250727_200425_trades.csv
+2025-07-27 20:04:25,588 - __main__ - INFO - DummyStrategy_json: reports/backtest\DummyStrategy_20250727_200425_report.json
+2025-07-27 20:04:25,588 - __main__ - INFO - RSIStrategy_csv: reports/backtest\RSIStrategy_20250727_200425_trades.csv
+2025-07-27 20:04:25,588 - __main__ - INFO - RSIStrategy_json: reports/backtest\RSIStrategy_20250727_200425_report.json
+2025-07-27 20:04:25,588 - __main__ - INFO - SimpleMA_csv: reports/backtest\SimpleMA_20250727_200425_trades.csv
+2025-07-27 20:04:25,588 - __main__ - INFO - SimpleMA_json: reports/backtest\SimpleMA_20250727_200425_report.json
+2025-07-27 20:04:25,588 - __main__ - INFO - comparison: reports/backtest\strategy_comparison_20250727_200425.csv
+2025-07-27 20:04:25,588 - __main__ - INFO - 
+=== 캐시 통계 ===
+2025-07-27 20:04:25,588 - __main__ - INFO - 히트율: 1.8%
+2025-07-27 20:04:25,588 - __main__ - INFO - 캐시 크기: 999
+2025-07-27 20:04:25,589 - __main__ - INFO - 백테스트가 성공적으로 완료되었습니다.

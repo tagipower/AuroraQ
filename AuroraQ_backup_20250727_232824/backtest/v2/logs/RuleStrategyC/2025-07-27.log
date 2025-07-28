@@ -1,0 +1,3 @@
+[2025-07-27 20:05:57] [INFO] [RuleStrategyC] 향상된 RuleStrategyC 초기화: BB(20, 2), RSI(14), 감정임계값(0.4)
+[2025-07-27 20:10:56] [INFO] [RuleStrategyC] 향상된 RuleStrategyC 초기화: BB(20, 2), RSI(14), 감정임계값(0.4)
+[2025-07-27 20:10:56] [ERROR] [RuleStrategyC] 지표 계산 오류: EnhancedIndicatorCache._calculate_bollinger_bands() got an unexpected keyword argument 'std'

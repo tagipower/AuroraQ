@@ -1,0 +1,24 @@
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 룰전략 A~E 백테스트 시작
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] ==================================================
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 시장 데이터 로딩 중...
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 가격 데이터 로드 완료: 8929개 레코드
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 감정 데이터 로드 완료: 500개 레코드
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 데이터 크기 제한: 8929 -> 1000 레코드
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy A] 백테스트 시작...
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy A] 백테스트 완료 - 거래 수: 0, ROI: 0.00%
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy B] 백테스트 시작...
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy B] 백테스트 완료 - 거래 수: 0, ROI: 0.00%
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy C] 백테스트 시작...
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy C] 백테스트 완료 - 거래 수: 0, ROI: 0.00%
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy D] 백테스트 시작...
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy D] 백테스트 완료 - 거래 수: 0, ROI: 0.00%
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy E] 백테스트 시작...
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] [Rule Strategy E] 백테스트 완료 - 거래 수: 0, ROI: 0.00%
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 
+==================================================
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 백테스트 결과 비교
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] ==================================================
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 백테스트 결과 저장 완료:
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest]   - 상세 결과: report/backtest/rule_strategies_backtest_20250726_232049.json
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest]   - 비교 표: report/backtest/rule_strategies_comparison_20250726_232049.csv
+[2025-07-26 23:20:49] [INFO] [RuleStrategyBacktest] 룰전략 백테스트 완료!

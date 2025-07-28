@@ -1,0 +1,191 @@
+# Enhanced Strategy Filters Configuration
+# 전략별 진입 조건 강화를 위한 통합 필터 설정
+
+# 전역 필터 (모든 전략에 적용)
+global_filters:
+  # 시장 체제 필터
+  market_regime:
+    enabled: true
+    allowed_regimes:
+      - bull
+      - neutral
+      - sideways
+    blocked_regimes:
+      - crisis
+      - high_volatility_extreme  # 변동성 > 0.5
+    confidence_threshold: 0.7  # 체제 신뢰도 최소값
+  
+  # 감정 점수 필터
+  sentiment:
+    enabled: true
+    min_score: 0.3  # 최소 감정 점수
+    max_score: 0.8  # 최대 감정 점수 (과열 방지)
+    extreme_fear_threshold: 0.2  # 극단적 공포
+    extreme_greed_threshold: 0.85  # 극단적 탐욕
+    change_rate_limit: 0.3  # 30% 이상 급변 시 차단
+  
+  # 변동성 필터
+  volatility:
+    enabled: true
+    min_volatility: 0.005  # 최소 변동성 (0.5%)
+    max_volatility: 0.10   # 최대 변동성 (10%)
+    atr_multiplier: 2.5    # ATR 기반 동적 조정
+  
+  # 거래량 필터
+  volume:
+    enabled: true
+    min_ratio: 0.8         # 평균 대비 최소 비율
+    max_ratio: 5.0         # 평균 대비 최대 비율 (스파이크 방지)
+    lookback_period: 20    # 평균 계산 기간
+  
+  # 시간 필터
+  time:
+    enabled: true
+    blocked_hours: [0, 1, 2, 3, 4, 5]  # UTC 기준 차단 시간
+    min_bars_required: 100  # 최소 데이터 요구량
+  
+  # 상관관계 필터
+  correlation:
+    enabled: true
+    btc_correlation_min: 0.3  # BTC와 최소 상관관계
+    check_period: 50          # 상관관계 계산 기간
+
+# 전략별 개별 필터
+strategy_specific:
+  RuleStrategyA:
+    # EMA 크로스오버 전략
+    ema_cross:
+      min_diff_pct: 0.002      # EMA 차이 최소 0.2%
+      cross_confirmation_bars: 2  # 크로스 확정 대기 봉 수
+    adx:
+      min_threshold: 20        # 최소 ADX (기존 15 → 20)
+      trend_strength: 25       # 강한 트렌드 기준
+    sentiment:
+      min_score: 0.4          # A전략은 더 보수적
+    entry_confidence:
+      min_confidence: 0.6     # 최소 진입 신뢰도
+  
+  RuleStrategyB:
+    # RSI + BB 전략
+    rsi:
+      oversold: 25            # 기존 30 → 25 (더 엄격)
+      overbought: 75          # 기존 70 → 75
+      neutral_zone: [40, 60]  # 중립 구간
+    bollinger:
+      min_band_width: 0.02    # 최소 밴드 폭 2%
+      price_position: 0.8     # 하단 밴드 대비 위치
+    volume:
+      surge_multiplier: 1.5   # 거래량 급증 기준
+    entry_confidence:
+      min_confidence: 0.65
+  
+  RuleStrategyC:
+    # MACD + 모멘텀 전략
+    macd:
+      min_histogram: 0.0002   # 최소 히스토그램 값
+      signal_diff_min: 0.0001 # 시그널 차이 최소값
+    momentum:
+      lookback: 10            # 모멘텀 계산 기간
+      min_momentum: 0.002     # 최소 모멘텀 2%
+    trend:
+      sma_periods: [20, 50]   # 트렌드 확인 SMA
+      alignment_required: true # SMA 정렬 필수
+    entry_confidence:
+      min_confidence: 0.7
+  
+  RuleStrategyD:
+    # Stochastic + CCI 전략
+    stochastic:
+      oversold: 15            # 기존 20 → 15
+      overbought: 85          # 기존 80 → 85
+      k_d_diff: 5             # K-D 최소 차이
+    cci:
+      oversold: -120          # 기존 -100 → -120
+      overbought: 120         # 기존 100 → 120
+      extreme_levels: [-200, 200]
+    volatility:
+      max_atr_multiplier: 2.0 # ATR 기반 제한
+    entry_confidence:
+      min_confidence: 0.75    # D전략은 가장 엄격
+  
+  RuleStrategyE:
+    # 다중 시간프레임 전략
+    timeframes:
+      alignment_required: 3   # 최소 3개 시간프레임 일치
+      strength_threshold: 0.7 # 각 시간프레임 신호 강도
+    volume_profile:
+      poc_distance: 0.02      # Point of Control 거리
+      value_area_position: 0.3 # Value Area 내 위치
+    trend_quality:
+      min_r_squared: 0.6      # 트렌드 라인 R²
+    entry_confidence:
+      min_confidence: 0.7
+
+# 리스크 기반 추가 필터
+risk_filters:
+  # 연속 손실 필터
+  consecutive_losses:
+    max_allowed: 3            # 최대 연속 손실
+    cooldown_periods: 5       # 대기 기간
+    confidence_reduction: 0.1 # 신뢰도 감소
+  
+  # 일일 한도
+  daily_limits:
+    max_trades: 10           # 일일 최대 거래
+    max_loss_pct: 0.05      # 일일 최대 손실 5%
+    profit_target_pct: 0.10 # 일일 목표 수익 10%
+  
+  # 포지션 크기 제한
+  position_sizing:
+    max_position_pct: 0.15  # 자본 대비 최대 15%
+    scale_with_confidence: true
+    min_position_pct: 0.05  # 최소 포지션 5%
+  
+  # 상관 포지션 제한
+  correlated_positions:
+    max_correlated: 2       # 최대 상관 포지션 수
+    correlation_threshold: 0.7
+
+# 필터 조합 로직
+filter_logic:
+  # AND 조건 (모두 만족해야 함)
+  required_filters:
+    - market_regime
+    - sentiment
+    - volatility
+    - volume
+    - time
+  
+  # OR 조건 (하나만 만족해도 됨)
+  optional_filters:
+    - correlation
+    - strategy_specific
+  
+  # 가중치 (중요도)
+  filter_weights:
+    market_regime: 0.25
+    sentiment: 0.20
+    volatility: 0.20
+    volume: 0.15
+    strategy_specific: 0.20
+  
+  # 최소 종합 점수
+  min_combined_score: 0.7
+
+# 필터 우회 조건 (긴급 상황)
+override_conditions:
+  # 극단적 시장 상황에서 일부 필터 완화
+  extreme_market:
+    trigger: "volatility > 0.15 OR abs(sentiment - 0.5) > 0.4"
+    relaxed_filters:
+      - volume
+      - correlation
+    multiplier: 0.8  # 필터 기준 20% 완화
+  
+  # 장기 포지션 없을 때
+  no_position_period:
+    hours: 24  # 24시간 동안 포지션 없음
+    relaxed_filters:
+      - sentiment
+      - volatility
+    multiplier: 0.9  # 필터 기준 10% 완화

@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-07-27T23:15:24.181766",
+  "ppo_enabled": true,
+  "mab_enabled": true,
+  "ppo": {
+    "buffer_size": 0,
+    "feature_size": 27
+  },
+  "mab": {
+    "SimpleMA": {
+      "avg_reward": 0.2398571990501009,
+      "reward_std": 0.01910380859464178,
+      "avg_confidence": 0.3861788617886179,
+      "total_trades": 41,
+      "exploration_count": 0,
+      "exploration_ratio": 0.0,
+      "adaptive_epsilon": 0.10348483270479378,
+      "performance_trend": [
+        0.23053644698226097,
+        0.22324130712053833,
+        0.23025161077896583,
+        0.23023826361661512,
+        0.2268182489892299
+      ]
+    },
+    "DummyStrategy": {
+      "avg_reward": 0.2459252689606342,
+      "reward_std": 0.022716827371120702,
+      "avg_confidence": 0.3980952380952381,
+      "total_trades": 35,
+      "exploration_count": 0,
+      "exploration_ratio": 0.0,
+      "adaptive_epsilon": 0.10114787308012116,
+      "performance_trend": [
+        0.22802363493404235,
+        0.2305574104287474,
+        0.23227473050072237,
+        0.27983000943754716,
+        0.2789044316473832
+      ]
+    },
+    "RSIStrategy": {
+      "avg_reward": 0.23978075967201024,
+      "reward_std": 0.02073410311184175,
+      "avg_confidence": 0.38717948717948725,
+      "total_trades": 39,
+      "exploration_count": 0,
+      "exploration_ratio": 0.0,
+      "adaptive_epsilon": 0.10390332810523431,
+      "performance_trend": [
+        0.2268407969368722,
+        0.22550839462765382,
+        0.22937977123845302,
+        0.2216926679355515,
+        0.2272159876736485
+      ]
+    }
+  }
+}

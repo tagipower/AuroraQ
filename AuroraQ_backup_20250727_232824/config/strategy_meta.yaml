@@ -1,0 +1,42 @@
+# 전략별 메타 정보 정의
+# AuroraQ 시스템의 전략 선택기 및 점수 시스템에서 참조됨
+
+PPO:
+  name: "PPO 전략"
+  type: "학습형"
+  style: "혼합"
+  risk_level: "중간"
+  weight: 1.0
+  active: true
+
+rule_strategy_a:
+  name: "추세 추종 전략"
+  type: "룰 기반"
+  style: "롱"
+  risk_level: "보수"
+  weight: 1.0
+  active: true
+
+rule_strategy_b:
+  name: "스마트머니 추적 전략"
+  type: "룰 기반"
+  style: "롱"
+  risk_level: "중간"
+  weight: 1.0
+  active: true
+
+rule_strategy_c:
+  name: "하락 추세 숏 전략"
+  type: "룰 기반"
+  style: "숏"
+  risk_level: "공격"
+  weight: 1.0
+  active: true
+
+rule_strategy_d:
+  name: "고변동성 돌파 전략"
+  type: "룰 기반"
+  style: "혼합"
+  risk_level: "고위험"
+  weight: 1.2
+  active: true
