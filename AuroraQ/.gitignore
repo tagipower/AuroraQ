@@ -111,14 +111,16 @@ coverage.xml
 .dmypy.json
 dmypy.json
 
-# Exclude unrelated files
-../*
-!./
-
-# Keep only AuroraQ project files
-*
-!/AuroraQ_Backtest/
-!/AuroraQ_Production/
-!/AuroraQ_Shared/
-!/.gitignore
-!/README.md
+# Include parent directory files to ignore
+../AuroraQ_backup_20250727_232824/
+../Claude.lnk
+../Google Drive.lnk
+../Microsoft Teams.lnk
+../SuperClaude/
+../Telegram.lnk
+../desktop.ini
+../*계정이름변경/
+../*명랑골친*
+../*비봉/
+../*핀파일*
+../*향촌동/
