@@ -1,0 +1,50 @@
+# AuroraQ 기본 설정
+
+# 에이전트 설정
+agent:
+  initial_capital: 100000.0
+  max_position_size: 0.2      # 20%
+  risk_per_trade: 0.02        # 2%
+  mode: "simulation"          # simulation or live
+
+# 전략 가중치
+strategies:
+  ppo_weight: 0.3
+  rule_weight: 0.7
+  
+  # Rule 전략별 가중치
+  rule_a_weight: 0.2
+  rule_b_weight: 0.2
+  rule_c_weight: 0.2
+  rule_d_weight: 0.2
+  rule_e_weight: 0.2
+
+# 데이터 설정
+data:
+  sentiment_lookback_hours: 24
+  market_data_timeframe: "1h"
+  cache_ttl: 300              # 5분
+  
+# 거래 설정
+trading:
+  commission: 0.001           # 0.1%
+  slippage: 0.0005           # 0.05%
+  min_order_size: 0.0001
+  
+# Binance API (환경 변수로 설정)
+binance:
+  testnet: true
+  # api_key: ${BINANCE_API_KEY}
+  # api_secret: ${BINANCE_API_SECRET}
+
+# 로깅
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/aurora_q.log"
+
+# 모니터링
+monitoring:
+  enable_telegram: false
+  enable_webhook: false
+  performance_update_interval: 3600  # 1시간

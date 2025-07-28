@@ -56,6 +56,7 @@ data/cache/
 
 # Config files with sensitive information
 config_local.yaml
+.env
 .env.local
 secrets.yaml
 
@@ -110,6 +111,11 @@ coverage.xml
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Claude Code settings (contains sensitive tokens)
+.claude.json
+../.claude.json
+*.claude.json
 
 # Include parent directory files to ignore
 ../AuroraQ_backup_20250727_232824/
