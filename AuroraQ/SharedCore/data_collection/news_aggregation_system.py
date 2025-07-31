@@ -61,10 +61,10 @@ class AuroraQNewsAggregator(NewsAggregator):
             self.register_collector("yahoo_finance", yahoo_collector)
             self.logger.info("✅ Yahoo Finance collector registered")
             
-            # 3. Reddit (항상 사용 가능)
+            # 3. Reddit (API 차단으로 비활성화됨)
             reddit_collector = RedditCollector()
             self.register_collector("reddit", reddit_collector)
-            self.logger.info("✅ Reddit collector registered")
+            self.logger.warning("⚠️ Reddit collector registered but API is blocked - will return empty results")
             
             # 4. NewsAPI (API 키 필요)
             if os.getenv("NEWSAPI_KEY"):

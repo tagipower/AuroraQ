@@ -6,8 +6,8 @@ import asyncio
 from typing import Optional, Any, Dict, Union
 from datetime import datetime, timedelta
 
-import aioredis
-from aioredis import Redis
+import redis.asyncio as redis
+from redis.asyncio import Redis
 import structlog
 
 from config.settings import settings
@@ -25,23 +25,15 @@ async def get_redis_client() -> Redis:
     
     if _redis_pool is None:
         try:
-            # Parse Redis URL
-            if settings.redis_url.startswith("redis://"):
-                _redis_pool = await aioredis.from_url(
-                    settings.redis_url,
-                    db=settings.redis_db,
-                    encoding="utf-8",
-                    decode_responses=True,
-                    max_connections=20,
-                    retry_on_timeout=True
-                )
-            else:
-                # Fallback for custom configuration
-                _redis_pool = await aioredis.create_redis_pool(
-                    settings.redis_url,
-                    db=settings.redis_db,
-                    encoding="utf-8"
-                )
+            # Create Redis client from URL
+            _redis_pool = redis.from_url(
+                settings.redis_url,
+                db=settings.redis_db,
+                encoding="utf-8",
+                decode_responses=True,
+                max_connections=20,
+                retry_on_timeout=True
+            )
             
             # Test connection
             await _redis_pool.ping()
@@ -60,8 +52,7 @@ async def close_redis_client():
     
     if _redis_pool:
         try:
-            await _redis_pool.close()
-            await _redis_pool.wait_closed()
+            await _redis_pool.aclose()
             _redis_pool = None
             logger.info("Redis connection closed")
         except Exception as e:

@@ -196,7 +196,7 @@ binance:
 # 텔레그램 알림 활성화
 monitoring:
   enable_telegram: true
-  telegram_bot_token: "YOUR_BOT_TOKEN"
+  telegram_bot_token: "your_telegram_bot_token"
   telegram_chat_id: "YOUR_CHAT_ID"
 ```
 

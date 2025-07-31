@@ -13,7 +13,19 @@ from .sentiment_models import (
     SentimentLabel,
     NewsArticle,
     SentimentResult,
-    FusedSentiment
+    FusedSentiment,
+    ServiceStats,
+    ModelInfo
+)
+
+# Import advanced components
+from .keyword_scorer import KeywordScorer
+from .advanced_keyword_scorer import (
+    AdvancedKeywordScorer,
+    MultiModalSentiment,
+    AdvancedFeatures,
+    EmotionalState,
+    MarketRegime
 )
 
 __all__ = [
@@ -28,5 +40,14 @@ __all__ = [
     'SentimentLabel',
     'NewsArticle',
     'SentimentResult',
-    'FusedSentiment'
+    'FusedSentiment',
+    'ServiceStats',
+    'ModelInfo',
+    # Advanced components
+    'KeywordScorer',
+    'AdvancedKeywordScorer',
+    'MultiModalSentiment',
+    'AdvancedFeatures',
+    'EmotionalState',
+    'MarketRegime'
 ]

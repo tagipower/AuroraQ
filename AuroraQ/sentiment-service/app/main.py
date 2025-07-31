@@ -19,9 +19,12 @@ from config.settings import settings, get_settings
 from models import HealthResponse, ErrorResponse
 from utils.logging_config import setup_logging
 from utils.redis_client import get_redis_client
-from .routers import sentiment, fusion, admin
+from .routers import sentiment, fusion, admin, events, trading, scheduler, advanced_fusion
 from .middleware import MetricsMiddleware, RateLimitMiddleware
-from .dependencies import get_sentiment_analyzer, get_fusion_manager
+from .dependencies import (
+    get_sentiment_analyzer, get_fusion_manager, get_big_event_detector,
+    get_batch_scheduler, health_check_dependencies, cleanup_dependencies
+)
 
 
 # Prometheus metrics
@@ -48,18 +51,33 @@ async def lifespan(app: FastAPI):
         await redis_client.ping()
         logger.info("Redis connection established")
         
+        # Initialize keyword scorer
+        from models.keyword_scorer import KeywordScorer
+        app.state.keyword_scorer = KeywordScorer()
+        logger.info("Keyword scorer initialized")
+        
         # Initialize and warm up models if enabled
         if settings.model_warmup:
             logger.info("Warming up models...")
             model_start_time = time.time()
             
-            # Load FinBERT analyzer
+            # Load all components
             analyzer = await get_sentiment_analyzer()
             fusion_manager = await get_fusion_manager()
+            event_detector = await get_big_event_detector()
+            batch_scheduler = await get_batch_scheduler()
             
-            # Warm up with sample text
-            await analyzer.analyze("Sample text for model warmup")
-            await fusion_manager.fuse({"news": 0.5}, symbol="BTC")
+            # Test keyword scorer
+            test_result = analyzer.analyze("Bitcoin surges as ETF approval approaches")
+            logger.info("Keyword scorer test", score=test_result.score, confidence=test_result.confidence)
+            
+            # Test event detector
+            detector_stats = event_detector.get_detector_stats()
+            logger.info("Event detector initialized", stats=detector_stats)
+            
+            # Start batch scheduler
+            await batch_scheduler.start()
+            logger.info("Batch scheduler started")
             
             load_time = time.time() - model_start_time
             MODEL_LOAD_TIME.set(load_time)
@@ -83,15 +101,18 @@ async def lifespan(app: FastAPI):
         await redis_client.close()
         logger.info("Redis connection closed")
         
-        # Close ML models
-        analyzer = await get_sentiment_analyzer()
-        fusion_manager = await get_fusion_manager()
+        # Stop batch scheduler
+        try:
+            batch_scheduler = await get_batch_scheduler()
+            await batch_scheduler.stop()
+            logger.info("Batch scheduler stopped")
+        except Exception as e:
+            logger.warning("Failed to stop batch scheduler", error=str(e))
         
-        if hasattr(analyzer, 'close'):
-            await analyzer.close()
-        if hasattr(fusion_manager, 'close'):
-            await fusion_manager.close()
-            
+        # Cleanup all dependencies
+        await cleanup_dependencies()
+        logger.info("Dependencies cleaned up")
+        
         logger.info("Service shutdown complete")
         
     except Exception as e:
@@ -139,6 +160,10 @@ def create_app() -> FastAPI:
     # Include routers
     app.include_router(sentiment.router, prefix="/api/v1/sentiment", tags=["sentiment"])
     app.include_router(fusion.router, prefix="/api/v1/fusion", tags=["fusion"])
+    app.include_router(advanced_fusion.router, prefix="/api/v1/fusion", tags=["advanced_fusion"])
+    app.include_router(events.router, prefix="/api/v1/events", tags=["events"])
+    app.include_router(trading.router, prefix="/api/v1/trading", tags=["trading"])
+    app.include_router(scheduler.router, prefix="/api/v1/scheduler", tags=["scheduler"])
     app.include_router(admin.router, prefix="/api/v1/admin", tags=["admin"])
     
     # Health check endpoint
@@ -155,12 +180,13 @@ def create_app() -> FastAPI:
         except Exception:
             redis_status = "unhealthy"
         
-        # Check model status
+        # Check dependencies status
         try:
-            analyzer = await get_sentiment_analyzer()
-            model_status = "healthy" if analyzer._initialized else "loading"
+            deps_status = await health_check_dependencies()
+            model_status = "healthy" if all("error" not in status for status in deps_status.values()) else "degraded"
         except Exception:
             model_status = "unhealthy"
+            deps_status = {}
         
         overall_status = "healthy" if redis_status == "healthy" and model_status == "healthy" else "degraded"
         
@@ -170,7 +196,8 @@ def create_app() -> FastAPI:
             uptime=uptime,
             components={
                 "redis": redis_status,
-                "finbert_model": model_status
+                "models": model_status,
+                **deps_status
             },
             metrics={
                 "memory_usage_mb": 0,  # TODO: Implement actual memory monitoring

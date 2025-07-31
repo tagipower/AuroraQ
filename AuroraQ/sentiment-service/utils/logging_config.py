@@ -83,7 +83,7 @@ def setup_logging() -> None:
     if not settings.debug:
         logging.getLogger("urllib3").setLevel(logging.WARNING)
         logging.getLogger("httpx").setLevel(logging.WARNING)
-        logging.getLogger("aioredis").setLevel(logging.WARNING)
+        logging.getLogger("redis").setLevel(logging.WARNING)
 
 
 def get_logger(name: str) -> structlog.stdlib.BoundLogger:

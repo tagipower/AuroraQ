@@ -3,7 +3,8 @@
 
 import os
 from typing import List, Dict, Any
-from pydantic import BaseSettings, Field
+from pydantic import Field
+from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 
@@ -52,8 +53,8 @@ class Settings(BaseSettings):
     
     # Security Configuration
     api_key_header: str = Field(default="X-API-Key", env="API_KEY_HEADER")
-    allowed_hosts: List[str] = Field(default=["*"], env="ALLOWED_HOSTS")
-    cors_origins: List[str] = Field(default=["*"], env="CORS_ORIGINS")
+    allowed_hosts: str = Field(default="*", env="ALLOWED_HOSTS")
+    cors_origins: str = Field(default="*", env="CORS_ORIGINS")
     
     # Monitoring Configuration
     enable_metrics: bool = Field(default=True, env="ENABLE_METRICS")
@@ -66,7 +67,34 @@ class Settings(BaseSettings):
     log_rotation: str = Field(default="1 day", env="LOG_ROTATION")
     log_retention: str = Field(default="30 days", env="LOG_RETENTION")
     
-    # Feedly Integration
+    # External API Keys
+    google_news_api_key: str = Field(default="", env="GOOGLE_NEWS_API_KEY")
+    yahoo_finance_api_key: str = Field(default="", env="YAHOO_FINANCE_API_KEY")
+    newsapi_key: str = Field(default="", env="NEWSAPI_KEY")
+    finnhub_api_key: str = Field(default="", env="FINNHUB_API_KEY")
+    reddit_client_id: str = Field(default="", env="REDDIT_CLIENT_ID")
+    reddit_client_secret: str = Field(default="", env="REDDIT_CLIENT_SECRET")
+    google_search_api_key: str = Field(default="", env="GOOGLE_SEARCH_API_KEY")
+    google_custom_search_id: str = Field(default="", env="GOOGLE_CUSTOM_SEARCH_ID")
+    bing_search_api_key: str = Field(default="", env="BING_SEARCH_API_KEY")
+    
+    # AuroraQ Integration
+    aurora_api_url: str = Field(default="http://localhost:8080", env="AURORA_API_URL")
+    aurora_api_key: str = Field(default="", env="AURORA_API_KEY")
+    aurora_timeout: int = Field(default=30, env="AURORA_TIMEOUT")
+    aurora_retry_attempts: int = Field(default=3, env="AURORA_RETRY_ATTEMPTS")
+    
+    # Telegram Notifications
+    telegram_bot_token: str = Field(default="", env="TELEGRAM_BOT_TOKEN")
+    telegram_chat_id_general: str = Field(default="", env="TELEGRAM_CHAT_ID_GENERAL")
+    telegram_chat_id_trading: str = Field(default="", env="TELEGRAM_CHAT_ID_TRADING")
+    telegram_chat_id_events: str = Field(default="", env="TELEGRAM_CHAT_ID_EVENTS")
+    telegram_chat_id_system: str = Field(default="", env="TELEGRAM_CHAT_ID_SYSTEM")
+    telegram_enabled: bool = Field(default=True, env="TELEGRAM_ENABLED")
+    telegram_quiet_hours_start: int = Field(default=23, env="TELEGRAM_QUIET_HOURS_START")
+    telegram_quiet_hours_end: int = Field(default=7, env="TELEGRAM_QUIET_HOURS_END")
+    
+    # Feedly Integration (레거시, 백업용)
     feedly_access_token: str = Field(default="", env="FEEDLY_ACCESS_TOKEN")
     feedly_user_id: str = Field(default="", env="FEEDLY_USER_ID")
     feedly_rate_limit: int = Field(default=100, env="FEEDLY_RATE_LIMIT")  # requests per hour
@@ -80,10 +108,13 @@ class Settings(BaseSettings):
     sentiment_history_path: str = Field(default="/app/data/sentiment_history.csv", env="SENTIMENT_HISTORY_PATH")
     sentiment_history_size: int = Field(default=10000, env="SENTIMENT_HISTORY_SIZE")
     
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = False
+    model_config = {
+        "extra": "ignore",
+        "env_file": ".env",
+        "env_file_encoding": "utf-8",
+        "case_sensitive": False,
+        "protected_namespaces": ('settings_',)
+    }
 
 
 class DevelopmentSettings(Settings):
@@ -105,8 +136,8 @@ class ProductionSettings(Settings):
     redis_url: str = Field(env="REDIS_URL")
     
     # Stricter security
-    allowed_hosts: List[str] = Field(env="ALLOWED_HOSTS")
-    cors_origins: List[str] = Field(env="CORS_ORIGINS")
+    allowed_hosts: str = Field(env="ALLOWED_HOSTS")
+    cors_origins: str = Field(env="CORS_ORIGINS")
 
 
 class TestSettings(Settings):

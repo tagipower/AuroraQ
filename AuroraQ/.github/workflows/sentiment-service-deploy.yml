@@ -1,0 +1,174 @@
+name: Deploy Sentiment Service
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'sentiment-service/**'
+      - '.github/workflows/sentiment-service-deploy.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'sentiment-service/**'
+  workflow_dispatch:
+
+env:
+  SERVICE_NAME: aurora-sentiment
+  DEPLOY_HOST: 109.123.239.30
+  DEPLOY_USER: root
+  DEPLOY_PATH: /opt/aurora-sentiment
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('sentiment-service/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      working-directory: ./sentiment-service
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio pytest-cov
+    
+    - name: Run tests
+      working-directory: ./sentiment-service
+      run: |
+        pytest tests/ -v --cov=app --cov-report=xml
+    
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./sentiment-service/coverage.xml
+        flags: sentiment-service
+        name: sentiment-service-coverage
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Build Docker image
+      working-directory: ./sentiment-service
+      run: |
+        docker build -t ${{ env.SERVICE_NAME }}:${{ github.sha }} .
+        docker tag ${{ env.SERVICE_NAME }}:${{ github.sha }} ${{ env.SERVICE_NAME }}:latest
+    
+    - name: Save Docker image
+      run: |
+        docker save ${{ env.SERVICE_NAME }}:latest | gzip > sentiment-service.tar.gz
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: docker-image
+        path: sentiment-service.tar.gz
+        retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: docker-image
+    
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
+        chmod 600 ~/.ssh/deploy_key
+        ssh-keyscan -H ${{ env.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+    
+    - name: Deploy to VPS
+      run: |
+        # Transfer Docker image
+        scp -i ~/.ssh/deploy_key sentiment-service.tar.gz ${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}:/tmp/
+        
+        # Transfer deployment files
+        scp -i ~/.ssh/deploy_key -r sentiment-service/docker-compose.yml ${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}:${{ env.DEPLOY_PATH }}/
+        scp -i ~/.ssh/deploy_key -r sentiment-service/config ${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}:${{ env.DEPLOY_PATH }}/
+        
+        # Deploy on VPS
+        ssh -i ~/.ssh/deploy_key ${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }} << 'ENDSSH'
+          set -e
+          
+          # Backup current deployment
+          if [ -d ${{ env.DEPLOY_PATH }} ]; then
+            timestamp=$(date +%Y%m%d_%H%M%S)
+            mkdir -p /opt/backups
+            tar -czf /opt/backups/sentiment-backup-${timestamp}.tar.gz -C /opt aurora-sentiment
+          fi
+          
+          # Load new Docker image
+          cd /tmp
+          docker load < sentiment-service.tar.gz
+          rm sentiment-service.tar.gz
+          
+          # Update services
+          cd ${{ env.DEPLOY_PATH }}
+          docker compose down
+          docker compose up -d
+          
+          # Wait for health check
+          sleep 30
+          
+          # Verify deployment
+          if curl -f http://localhost:8000/health; then
+            echo "Deployment successful!"
+          else
+            echo "Health check failed!"
+            docker compose logs --tail=50
+            exit 1
+          fi
+          
+          # Clean up
+          docker image prune -f
+        ENDSSH
+    
+    - name: Send notification
+      if: always()
+      run: |
+        if [ "${{ job.status }}" = "success" ]; then
+          STATUS="✅ Success"
+        else
+          STATUS="❌ Failed"
+        fi
+        
+        MESSAGE="Deployment Status: ${STATUS}%0A"
+        MESSAGE+="Service: Sentiment Service%0A"
+        MESSAGE+="Commit: ${{ github.sha }}%0A"
+        MESSAGE+="Author: ${{ github.actor }}%0A"
+        MESSAGE+="Time: $(date)"
+        
+        if [ ! -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ] && [ ! -z "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d "text=${MESSAGE}" \
+            -d "parse_mode=HTML"
+        fi

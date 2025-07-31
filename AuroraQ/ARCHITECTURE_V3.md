@@ -815,7 +815,7 @@ redis:
 postgresql:
   enabled: true
   auth:
-    postgresPassword: "secure-password"
+    postgresPassword: "your-secure-password"
   primary:
     persistence:
       enabled: true

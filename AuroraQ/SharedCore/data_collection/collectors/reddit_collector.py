@@ -73,25 +73,30 @@ class RedditCollector(BaseNewsCollector):
         return self.session
     
     async def _fetch_reddit_data(self, endpoint: str, params: Dict[str, Any] = None) -> Optional[Dict]:
-        """Reddit 데이터 가져오기"""
+        """Reddit 데이터 가져오기 - API 차단 시 빈 데이터 반환"""
         try:
-            session = await self._get_session()
-            url = f"{self.base_url}{endpoint}.json"
+            # Reddit API가 차단된 경우 즉시 빈 데이터 반환
+            self.logger.warning("Reddit API is currently blocked - returning empty data")
+            return {"data": {"children": []}}
             
-            if params:
-                url += "?" + urlencode(params)
-            
-            async with session.get(url) as response:
-                if response.status == 200:
-                    return await response.json()
-                else:
-                    self.logger.error(f"Reddit fetch failed: {response.status}")
-                    return None
+            # 아래는 원본 코드 (현재 사용 안함)
+            # session = await self._get_session()
+            # url = f"{self.base_url}{endpoint}.json"
+            # 
+            # if params:
+            #     url += "?" + urlencode(params)
+            # 
+            # async with session.get(url) as response:
+            #     if response.status == 200:
+            #         return await response.json()
+            #     else:
+            #         self.logger.error(f"Reddit fetch failed: {response.status}")
+            #         return None
                     
         except Exception as e:
             self.logger.error(f"Error fetching Reddit data: {e}")
             self.stats["errors"] += 1
-            return None
+            return {"data": {"children": []}}
     
     def _parse_reddit_post(self, post_data: Dict[str, Any]) -> Optional[NewsArticle]:
         """Reddit 포스트를 NewsArticle로 변환"""
@@ -243,72 +248,17 @@ class RedditCollector(BaseNewsCollector):
         return article
     
     async def collect_headlines(self, count: int = 20) -> List[NewsArticle]:
-        """Reddit 핫 포스트 수집"""
-        articles = []
-        
-        # 주요 서브레딧에서 수집
-        subreddits = ["cryptocurrency", "wallstreetbets", "news"]
-        posts_per_sub = count // len(subreddits)
-        
-        for subreddit in subreddits:
-            data = await self._fetch_reddit_data(
-                f"/r/{subreddit}/hot",
-                params={"limit": posts_per_sub}
-            )
-            
-            if data and 'data' in data:
-                for post in data['data']['children']:
-                    if post['kind'] == 't3':  # 포스트
-                        article = self._parse_reddit_post(post)
-                        if article:
-                            article = await self.analyze_reddit_sentiment(article)
-                            articles.append(article)
-                            self.stats["articles_collected"] += 1
-        
-        return articles
+        """Reddit 핫 포스트 수집 - API 차단으로 인해 비활성화됨"""
+        self.logger.warning("Reddit collector is disabled due to API block")
+        return []  # 빈 리스트 반환
     
     async def search_news(self, keywords: List[str],
                          since: Optional[datetime] = None,
                          until: Optional[datetime] = None,
                          count: int = 20) -> List[NewsArticle]:
-        """Reddit 검색"""
-        query = " ".join(keywords)
-        articles = []
-        
-        # 관련 서브레딧에서 검색
-        relevant_subs = self._get_relevant_subreddits(keywords)
-        
-        for subreddit in relevant_subs[:3]:  # 최대 3개 서브레딧
-            data = await self._fetch_reddit_data(
-                f"/r/{subreddit}/search",
-                params={
-                    "q": query,
-                    "sort": "relevance",
-                    "t": "week",  # 지난 주
-                    "limit": count // 3,
-                    "restrict_sr": "true"
-                }
-            )
-            
-            if data and 'data' in data:
-                for post in data['data']['children']:
-                    if post['kind'] == 't3':
-                        article = self._parse_reddit_post(post)
-                        if article:
-                            # 시간 필터링
-                            if since and article.published_date < since:
-                                continue
-                            if until and article.published_date > until:
-                                continue
-                            
-                            article.relevance_score = self.calculate_relevance(article, keywords)
-                            article = await self.analyze_reddit_sentiment(article)
-                            articles.append(article)
-        
-        # 관련성 점수로 정렬
-        articles.sort(key=lambda x: x.relevance_score or 0, reverse=True)
-        
-        return articles[:count]
+        """Reddit 검색 - API 차단으로 인해 비활성화됨"""
+        self.logger.warning("Reddit search is disabled due to API block")
+        return []  # 빈 리스트 반환
     
     def _get_relevant_subreddits(self, keywords: List[str]) -> List[str]:
         """키워드에 따른 관련 서브레딧 선택"""
@@ -326,84 +276,23 @@ class RedditCollector(BaseNewsCollector):
         return self.news_subreddits
     
     async def get_breaking_news(self, minutes: int = 30) -> List[NewsArticle]:
-        """Reddit 실시간 트렌딩"""
-        articles = []
-        cutoff_time = datetime.now() - timedelta(minutes=minutes)
-        
-        # Rising posts 확인
-        subreddits = ["cryptocurrency", "wallstreetbets", "news"]
-        
-        for subreddit in subreddits:
-            data = await self._fetch_reddit_data(
-                f"/r/{subreddit}/rising",
-                params={"limit": 10}
-            )
-            
-            if data and 'data' in data:
-                for post in data['data']['children']:
-                    if post['kind'] == 't3':
-                        article = self._parse_reddit_post(post)
-                        if article and article.published_date >= cutoff_time:
-                            article.category = NewsCategory.BREAKING
-                            article = await self.analyze_reddit_sentiment(article)
-                            articles.append(article)
-        
-        return articles
+        """Reddit 실시간 트렌딩 - API 차단으로 인해 비활성화됨"""
+        self.logger.warning("Reddit breaking news is disabled due to API block")
+        return []  # 빈 리스트 반환
     
     async def get_trending_sentiment(self, subreddit: str = "cryptocurrency") -> Dict[str, Any]:
-        """특정 서브레딧의 트렌딩 감정 분석"""
-        # 상위 포스트 수집
-        data = await self._fetch_reddit_data(
-            f"/r/{subreddit}/hot",
-            params={"limit": 100}
-        )
-        
-        if not data or 'data' not in data:
-            return {}
-        
-        sentiments = {"positive": 0, "negative": 0, "neutral": 0}
-        total_score = 0
-        total_comments = 0
-        keywords_count = {}
-        
-        for post in data['data']['children']:
-            if post['kind'] == 't3':
-                article = self._parse_reddit_post(post)
-                if article:
-                    article = await self.analyze_reddit_sentiment(article)
-                    
-                    # 감정 집계
-                    if article.sentiment_label:
-                        if article.sentiment_label.value > 0:
-                            sentiments["positive"] += 1
-                        elif article.sentiment_label.value < 0:
-                            sentiments["negative"] += 1
-                        else:
-                            sentiments["neutral"] += 1
-                    
-                    # 메트릭 집계
-                    metadata = article.metadata or {}
-                    total_score += metadata.get('score', 0)
-                    total_comments += metadata.get('num_comments', 0)
-                    
-                    # 키워드 집계
-                    for keyword in article.keywords:
-                        keywords_count[keyword] = keywords_count.get(keyword, 0) + 1
-        
-        total_posts = sum(sentiments.values())
-        
-        # 상위 키워드
-        top_keywords = sorted(keywords_count.items(), key=lambda x: x[1], reverse=True)[:10]
-        
+        """특정 서브레딧의 트렌딩 감정 분석 - API 차단으로 인해 비활성화됨"""
+        self.logger.warning("Reddit sentiment analysis is disabled due to API block")
         return {
             "subreddit": subreddit,
-            "total_posts_analyzed": total_posts,
-            "sentiment_distribution": sentiments,
-            "overall_sentiment": (sentiments["positive"] - sentiments["negative"]) / total_posts if total_posts > 0 else 0,
-            "average_score": total_score / total_posts if total_posts > 0 else 0,
-            "average_comments": total_comments / total_posts if total_posts > 0 else 0,
-            "trending_keywords": [{"keyword": kw, "count": count} for kw, count in top_keywords],
-            "timestamp": datetime.now().isoformat()
+            "total_posts_analyzed": 0,
+            "sentiment_distribution": {"positive": 0, "negative": 0, "neutral": 0},
+            "overall_sentiment": 0,
+            "average_score": 0,
+            "average_comments": 0,
+            "trending_keywords": [],
+            "timestamp": datetime.now().isoformat(),
+            "status": "disabled_due_to_api_block"
         }
     
     async def get_wallstreetbets_sentiment(self) -> Dict[str, Any]:

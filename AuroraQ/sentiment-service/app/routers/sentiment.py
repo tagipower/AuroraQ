@@ -1,16 +1,16 @@
 # app/routers/sentiment.py
-"""Sentiment analysis API endpoints"""
+"""Sentiment analysis API endpoints with keyword scorer integration"""
 
 import time
 import hashlib
 from typing import List, Optional
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
+from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks, Request
 from fastapi.responses import JSONResponse
 import structlog
 
-from models import (
+from models.sentiment_models import (
     SentimentRequest, 
     SentimentResponse,
     BatchSentimentRequest,
@@ -22,9 +22,15 @@ from app.dependencies import get_sentiment_analyzer, get_cache_client
 from utils.redis_client import RedisCache, generate_sentiment_cache_key
 from utils.logging_config import get_logger, log_function_call
 from config.settings import settings
+from models.keyword_scorer import KeywordScorer, KeywordScore, SentimentDirection
 
 logger = get_logger(__name__)
 router = APIRouter()
+
+
+def get_keyword_scorer(request: Request) -> KeywordScorer:
+    """Get keyword scorer instance from app state"""
+    return request.app.state.keyword_scorer
 
 
 @router.post("/analyze", response_model=SentimentResponse)
@@ -274,6 +280,193 @@ async def analyze_batch_sentiment(
         raise HTTPException(
             status_code=500,
             detail=f"Batch sentiment analysis failed: {str(e)}"
+        )
+
+
+@router.post("/analyze/realtime")
+async def analyze_realtime_sentiment(
+    request: SentimentRequest,
+    keyword_scorer: KeywordScorer = Depends(get_keyword_scorer)
+):
+    """
+    Ultra-fast realtime sentiment analysis using keyword scoring
+    Target: <0.5 seconds response time for trading signals
+    
+    - **text**: Text to analyze (max 1024 characters for speed)
+    - **symbol**: Asset symbol for context (optional)
+    """
+    start_time = time.time()
+    
+    try:
+        # Validate input for realtime processing
+        if not request.text or len(request.text.strip()) == 0:
+            raise HTTPException(status_code=400, detail="Text cannot be empty")
+        
+        if len(request.text) > 1024:
+            raise HTTPException(
+                status_code=400, 
+                detail="Text too long for realtime analysis (max 1024 characters)"
+            )
+        
+        # Perform fast keyword analysis
+        keyword_result: KeywordScore = keyword_scorer.analyze(request.text)
+        
+        # Convert to SentimentLabel
+        if keyword_result.direction == SentimentDirection.BULLISH:
+            label = SentimentLabel.POSITIVE
+        elif keyword_result.direction == SentimentDirection.BEARISH:
+            label = SentimentLabel.NEGATIVE
+        else:
+            label = SentimentLabel.NEUTRAL
+        
+        total_time = time.time() - start_time
+        
+        # Create response in compatible format
+        result = SentimentResponse(
+            sentiment_score=max(0.0, min(1.0, (keyword_result.score + 1.0) / 2.0)),  # Convert -1~1 to 0~1
+            label=label,
+            confidence=keyword_result.confidence,
+            processing_time=total_time,
+            keywords=keyword_result.matched_keywords,
+            scenario_tag=keyword_result.direction.value,
+            metadata={
+                "symbol": request.symbol,
+                "model": "keyword_realtime",
+                "category_scores": keyword_result.category_scores,
+                "processing_time_ms": keyword_result.processing_time,
+                "method": "realtime"
+            }
+        )
+        
+        # Log performance
+        logger.info(
+            "Realtime sentiment analysis completed",
+            **log_function_call(
+                "analyze_realtime_sentiment",
+                text_length=len(request.text),
+                symbol=request.symbol,
+                score=result.sentiment_score,
+                label=result.label.value,
+                processing_time=total_time,
+                keyword_processing_time=keyword_result.processing_time
+            )
+        )
+        
+        return result
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(
+            "Realtime sentiment analysis failed",
+            error=str(e),
+            text_length=len(request.text) if request.text else 0
+        )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Realtime analysis failed: {str(e)}"
+        )
+
+
+@router.post("/analyze/batch/realtime")
+async def analyze_batch_realtime_sentiment(
+    request: BatchSentimentRequest,
+    keyword_scorer: KeywordScorer = Depends(get_keyword_scorer)
+):
+    """
+    Ultra-fast batch sentiment analysis using keyword scoring
+    Target: High throughput for multiple texts
+    
+    - **texts**: List of texts to analyze (max 100 items, 512 chars each)
+    - **symbol**: Asset symbol for context (optional)
+    """
+    start_time = time.time()
+    
+    try:
+        # Validate input for realtime batch processing
+        if not request.texts:
+            raise HTTPException(status_code=400, detail="Texts list cannot be empty")
+        
+        if len(request.texts) > 100:
+            raise HTTPException(status_code=400, detail="Too many texts for realtime batch (max 100)")
+        
+        # Check individual text lengths for realtime processing
+        for i, text in enumerate(request.texts):
+            if len(text) > 512:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Text {i} too long for realtime batch (max 512 characters per text)"
+                )
+        
+        # Perform fast batch keyword analysis
+        keyword_results: List[KeywordScore] = keyword_scorer.analyze_batch(request.texts)
+        
+        # Convert results to compatible format
+        results = []
+        for i, keyword_result in enumerate(keyword_results):
+            # Convert direction to SentimentLabel
+            if keyword_result.direction == SentimentDirection.BULLISH:
+                label = SentimentLabel.POSITIVE
+            elif keyword_result.direction == SentimentDirection.BEARISH:
+                label = SentimentLabel.NEGATIVE
+            else:
+                label = SentimentLabel.NEUTRAL
+            
+            result = SentimentResponse(
+                sentiment_score=max(0.0, min(1.0, (keyword_result.score + 1.0) / 2.0)),
+                label=label,
+                confidence=keyword_result.confidence,
+                processing_time=keyword_result.processing_time / 1000.0,  # Convert ms to seconds
+                keywords=keyword_result.matched_keywords,
+                scenario_tag=keyword_result.direction.value,
+                metadata={
+                    "symbol": request.symbol,
+                    "model": "keyword_realtime",
+                    "category_scores": keyword_result.category_scores,
+                    "batch_index": i,
+                    "method": "realtime_batch"
+                }
+            )
+            results.append(result)
+        
+        # Calculate batch statistics
+        sentiment_scores = [r.sentiment_score for r in results]
+        average_score = sum(sentiment_scores) / len(sentiment_scores) if sentiment_scores else 0.5
+        total_processing_time = time.time() - start_time
+        
+        batch_response = BatchSentimentResponse(
+            results=results,
+            total_count=len(results),
+            average_score=average_score,
+            processing_time=total_processing_time
+        )
+        
+        # Log batch performance
+        logger.info(
+            "Realtime batch sentiment analysis completed",
+            **log_function_call(
+                "analyze_batch_realtime_sentiment",
+                batch_size=len(request.texts),
+                symbol=request.symbol,
+                average_score=average_score,
+                processing_time=total_processing_time,
+                throughput=len(request.texts) / total_processing_time
+            )
+        )
+        
+        return batch_response
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(
+            "Realtime batch sentiment analysis failed",
+            error=str(e),
+            batch_size=len(request.texts) if request.texts else 0
+        )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Realtime batch analysis failed: {str(e)}"
         )
 
 
