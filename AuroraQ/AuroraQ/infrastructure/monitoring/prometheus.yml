@@ -1,0 +1,147 @@
+# AuroraQ Prometheus 설정
+# VPS 최적화된 메트릭 수집
+
+global:
+  scrape_interval: 30s
+  evaluation_interval: 30s
+  external_labels:
+    cluster: 'auroraq-vps'
+    environment: 'production'
+
+# Alertmanager 설정
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # Alertmanager 없이 진행
+
+# 규칙 파일
+rule_files:
+  - "/etc/prometheus/rules/*.yml"
+
+# 스크랩 설정
+scrape_configs:
+  # Prometheus 자체 모니터링
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 60s
+
+  # VPS API 시스템 메트릭
+  - job_name: 'vps-api-system'
+    static_configs:
+      - targets: ['localhost:8004']
+    scrape_interval: 30s
+    metrics_path: '/metrics'
+    scrape_timeout: 10s
+    honor_labels: true
+    labels:
+      service: 'api-system'
+
+  # ONNX 센티먼트 서비스
+  - job_name: 'onnx-sentiment'
+    static_configs:
+      - targets: ['onnx-sentiment:8003']
+    scrape_interval: 60s
+    metrics_path: '/metrics'
+    scrape_timeout: 15s
+
+  # VPS 모니터링 시스템
+  - job_name: 'vps-monitor'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 30s
+    metrics_path: '/metrics'
+    scrape_timeout: 10s
+    labels:
+      service: 'vps-monitor'
+
+  # Redis 모니터링
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    scrape_interval: 60s
+    
+  # PostgreSQL 모니터링
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres:5432']
+    scrape_interval: 60s
+
+  # 시스템 메트릭 (Node Exporter가 있다면)
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['host.docker.internal:9100']
+    scrape_interval: 60s
+    honor_labels: true
+
+  # Docker 컨테이너 메트릭 (cAdvisor가 있다면)
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+    scrape_interval: 60s
+    honor_labels: true
+
+# VPS 최적화 설정
+# 저장소 최적화:
+# --storage.tsdb.retention.time=7d  # VPS 환경에서는 짧게
+# --storage.tsdb.retention.size=2GB  # VPS 디스크 제한
+# --storage.tsdb.min-block-duration=2h
+# --storage.tsdb.max-block-duration=25h
+
+  # 고빈도 VPS 트레이딩 메트릭
+  - job_name: 'vps-trading-metrics'
+    static_configs:
+      - targets: ['localhost:8004']
+    scrape_interval: 15s
+    scrape_timeout: 5s
+    metrics_path: '/metrics'
+    params:
+      format: ['prometheus']
+    metric_relabel_configs:
+      - source_labels: [__name__]
+        regex: '(.*trading.*|.*position.*|.*pnl.*)'
+        action: keep
+
+# 전역 메트릭 라벨링 규칙
+metric_relabel_configs:
+  # VPS 환경 라벨 추가
+  - target_label: environment
+    replacement: 'vps-production'
+  
+  - target_label: project
+    replacement: 'auroraq'
+  
+  - target_label: deployment
+    replacement: 'vps-deployment'
+
+  # 인스턴스 라벨 정규화
+  - source_labels: [instance]
+    target_label: instance
+    regex: 'localhost:(.+)'
+    replacement: 'vps-server:${1}'
+
+# 원격 쓰기 설정 (필요시 - 외부 모니터링 시스템)
+# remote_write:
+#   - url: "https://your-remote-prometheus/api/v1/write"
+#     write_relabel_configs:
+#       - source_labels: [__name__]
+#         regex: 'auroraq_.*'
+#         action: keep
+
+# 서비스 디스커버리 (Kubernetes나 Docker Swarm 사용시)
+# - job_name: 'docker-containers'
+#   docker_sd_configs:
+#     - host: unix:///var/run/docker.sock
+#       refresh_interval: 30s
+#   relabel_configs:
+#     - source_labels: [__meta_docker_container_label_prometheus_scrape]
+#       action: keep
+#       regex: true
+#     - source_labels: [__meta_docker_container_label_prometheus_path]
+#       target_label: __metrics_path__
+#       regex: (.+)
+#     - source_labels: [__address__, __meta_docker_container_label_prometheus_port]
+#       target_label: __address__
+#       regex: '([^:]+)(?::\d+)?;(\d+)'
+#       replacement: '${1}:${2}'

@@ -1,0 +1,43 @@
+# AuroraQ Web Terminal Dockerfile
+FROM ubuntu:22.04
+
+# 환경 설정
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TERM=xterm-256color
+
+# 패키지 설치
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    wget \
+    curl \
+    nano \
+    vim \
+    htop \
+    && rm -rf /var/lib/apt/lists/*
+
+# ttyd 설치
+RUN wget -O /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/download/1.7.3/ttyd.x86_64 \
+    && chmod +x /usr/local/bin/ttyd
+
+# Python 패키지 설치
+COPY vps-deployment/deployment/requirements.txt .
+RUN pip3 install -r requirements.txt \
+    && pip3 install rich psutil keyboard
+
+# 작업 디렉토리 설정
+WORKDIR /app
+COPY vps-deployment/ ./vps-deployment/
+
+# 모바일 최적화 스크립트 권한 설정
+RUN chmod +x vps-deployment/scripts/mobile_dashboard.sh
+
+# 포트 노출
+EXPOSE 7681
+
+# 헬스체크
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:7681 || exit 1
+
+# 시작 명령
+CMD ["ttyd", "-p", "7681", "-i", "0.0.0.0", "--writable", "/app/vps-deployment/scripts/mobile_dashboard.sh"]

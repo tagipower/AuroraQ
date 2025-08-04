@@ -1,0 +1,65 @@
+# Prometheus 설정
+# AuroraQ ONNX Sentiment Service 모니터링
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'auroraq-onnx-monitor'
+
+# 규칙 파일 (선택적)
+rule_files:
+  # - "rules/*.yml"
+
+# 스크래핑 작업 설정
+scrape_configs:
+  # ONNX Sentiment Service 메트릭
+  - job_name: 'onnx-sentiment'
+    static_configs:
+      - targets: ['onnx-sentiment:8002']
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    metrics_path: /metrics
+    scheme: http
+
+  # Redis 메트릭 (redis_exporter 사용시)
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    scrape_interval: 15s
+    metrics_path: /metrics
+    scheme: http
+    # Redis exporter를 사용하는 경우
+    # - targets: ['redis-exporter:9121']
+
+  # PostgreSQL 메트릭 (postgres_exporter 사용시)
+  - job_name: 'postgresql'
+    static_configs:
+      - targets: ['postgres:5432']
+    scrape_interval: 15s
+    # PostgreSQL exporter를 사용하는 경우
+    # - targets: ['postgres-exporter:9187']
+
+  # Prometheus 자체 모니터링
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 5s
+
+  # Node Exporter (시스템 메트릭, 선택적)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 15s
+
+# 알림 설정 (선택적)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# 외부 라벨
+external_labels:
+  cluster: 'auroraq-vps'
+  region: 'vps-deployment'

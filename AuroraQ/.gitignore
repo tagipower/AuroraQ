@@ -119,6 +119,15 @@ dmypy.json
 ../.claude.json
 *.claude.json
 
+# Node.js / NPM
+node_modules/
+%APPDATA%/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
 # Include parent directory files to ignore
 ../AuroraQ_backup_20250727_232824/
 ../Claude.lnk
@@ -132,3 +141,4 @@ dmypy.json
 ../*비봉/
 ../*핀파일*
 ../*향촌동/
+../*스크린샷*

@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  auroaq-webterminal:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.webterminal
+    container_name: auroaq-dashboard
+    ports:
+      - "7681:7681"
+    environment:
+      - TERM=xterm-256color
+      - COLUMNS=80
+      - LINES=24
+    volumes:
+      - ../dashboard:/app/vps-deployment/dashboard
+      - ../logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7681"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - auroaq-network
+
+  # Nginx 리버스 프록시 (선택사항)
+  nginx:
+    image: nginx:alpine
+    container_name: auroaq-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - auroaq-webterminal
+    restart: unless-stopped
+    networks:
+      - auroaq-network
+
+networks:
+  auroaq-network:
+    driver: bridge

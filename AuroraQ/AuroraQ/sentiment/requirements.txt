@@ -1,0 +1,67 @@
+# AuroraQ Sentiment Service Dependencies
+# VPS 최적화 센티먼트 분석 서비스용 패키지
+
+# Core Web Framework
+fastapi==0.116.1
+pydantic==2.11.5
+uvicorn==0.34.0
+
+# Async HTTP Client
+aiohttp==3.12.12
+httpx==0.28.1
+
+# HTML/XML Parsing
+beautifulsoup4==4.13.4
+lxml==5.3.0
+
+# RSS/Feed Processing
+feedparser==6.0.11
+
+# HTTP Retry Logic
+backoff==2.2.1
+tenacity==9.0.0
+
+# Task Scheduling
+apscheduler==3.10.4
+
+# Data Processing
+numpy==2.3.0
+pandas==2.3.0
+
+# Machine Learning
+torch==2.7.1
+transformers==4.52.4
+
+# Financial Data
+yfinance==0.2.65
+
+# System Monitoring
+psutil==7.0.0
+
+# Configuration
+pyyaml==6.0.2
+python-dotenv==1.0.1
+
+# Database (Optional)
+asyncpg==0.30.0
+sqlalchemy==2.0.36
+
+# Cache (Optional)
+redis==5.2.1
+hiredis==3.1.0
+
+# Logging
+structlog==24.4.0
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-mock==3.14.0
+
+# Development
+black==24.10.0
+flake8==7.1.1
+mypy==1.14.1
+
+# Production
+gunicorn==23.0.0

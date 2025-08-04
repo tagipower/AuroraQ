@@ -1,0 +1,223 @@
+# VPS Metrics Integration Configuration
+# 9패널 대시보드와 ONNX 센티먼트 서비스 통합 설정
+
+metrics_service:
+  name: "VPS Sentiment Metrics Service"
+  version: "2.0.0"
+  description: "9패널 대시보드용 ONNX 통합 메트릭 서비스"
+
+# API 엔드포인트 설정
+api_endpoints:
+  base_url: "http://localhost:8001"
+  metrics_prefix: "/metrics"
+  
+  # 9패널 대시보드 API
+  dashboard_endpoints:
+    health: "/metrics/health"
+    sentiment: "/metrics/sentiment"
+    fusion: "/metrics/fusion"
+    batch: "/metrics/batch"
+    dashboard: "/metrics/dashboard"
+    stats: "/metrics/stats"
+    cache_clear: "/metrics/cache/clear"
+
+# 패널 매핑 설정
+panel_mappings:
+  1_sentiment_fusion:
+    title: "🤖 ONNX Sentiment Fusion"
+    endpoint: "/metrics/sentiment"
+    update_interval: 60  # seconds
+    cache_ttl: 300       # seconds
+    
+  2_ml_predictions:
+    title: "🔮 ONNX ML Predictions"
+    endpoint: "/metrics/fusion"
+    update_interval: 60
+    cache_ttl: 300
+    
+  3_event_impact:
+    title: "💥 Event Impact Analysis"
+    endpoint: "/metrics/fusion"
+    update_interval: 120
+    cache_ttl: 600
+    
+  4_strategy_performance:
+    title: "📈 ONNX Strategy Performance"
+    endpoint: "/metrics/fusion"
+    update_interval: 300
+    cache_ttl: 900
+    
+  5_anomaly_detection:
+    title: "🚨 ONNX Anomaly Detection"
+    endpoint: "/metrics/fusion"
+    update_interval: 30
+    cache_ttl: 120
+    
+  6_network_analysis:
+    title: "🌐 Network Analysis"
+    endpoint: "/metrics/fusion"
+    update_interval: 180
+    cache_ttl: 600
+    
+  7_market_pulse:
+    title: "💓 Market Pulse"
+    endpoint: "/metrics/stats"
+    update_interval: 60
+    cache_ttl: 300
+    
+  8_system_intelligence:
+    title: "🤖 ONNX System Intelligence"
+    endpoint: "/metrics/stats"
+    update_interval: 120
+    cache_ttl: 300
+    
+  9_live_feed:
+    title: "📡 ONNX Live Feed"
+    endpoint: "/metrics/dashboard"
+    update_interval: 15
+    cache_ttl: 60
+
+# VPS 최적화 설정
+vps_optimization:
+  memory_limit_mb: 4096
+  max_concurrent_requests: 10
+  request_timeout: 30
+  connection_pool_size: 20
+  
+  # 캐시 설정
+  cache_settings:
+    default_ttl: 300
+    max_size: 1000
+    compression: true
+    
+  # 배치 처리 설정
+  batch_processing:
+    enabled: true
+    max_batch_size: 100
+    batch_interval: 60
+    
+  # 에러 처리
+  error_handling:
+    max_retries: 3
+    retry_delay: 1.0
+    fallback_enabled: true
+    circuit_breaker_threshold: 5
+
+# 데이터 매핑 설정
+data_mappings:
+  # 센티먼트 융합 패널
+  sentiment_fusion:
+    fusion_score: "data.fusion_score"
+    text_sentiment: "data.text_sentiment"
+    price_sentiment: "data.price_action_sentiment"
+    volume_sentiment: "data.volume_sentiment"
+    social_engagement: "data.social_engagement"
+    onnx_metadata: "data.onnx_metadata"
+    
+  # ML 예측 패널
+  ml_predictions:
+    direction: "data.ml_prediction.direction"
+    confidence: "data.ml_prediction.confidence"
+    risk_level: "data.ml_prediction.risk_level"
+    timeframe: "data.ml_prediction.timeframe"
+    feature_importance: "data.ml_prediction.feature_importance"
+    
+  # 이벤트 영향 패널
+  event_impact:
+    event_type: "data.event_impact.event_type"
+    impact_score: "data.event_impact.impact_score"
+    affected_markets: "data.event_impact.affected_markets"
+    spillover_risk: "data.event_impact.spillover_risk"
+    sentiment_shift: "data.event_impact.sentiment_shift"
+    
+  # 전략 성과 패널
+  strategy_performance:
+    total_return: "data.strategy_performance.total_return"
+    sharpe_ratio: "data.strategy_performance.sharpe_ratio"
+    max_drawdown: "data.strategy_performance.max_drawdown"
+    win_rate: "data.strategy_performance.win_rate"
+    var_95: "data.strategy_performance.risk_metrics.var_95"
+    
+  # 이상 탐지 패널
+  anomaly_detection:
+    anomaly_score: "data.anomaly_detection.anomaly_score"
+    anomaly_type: "data.anomaly_detection.anomaly_type"
+    severity: "data.anomaly_detection.severity"
+    description: "data.anomaly_detection.description"
+    z_score: "data.anomaly_detection.statistical_indicators.z_score"
+
+# 성능 모니터링
+performance_monitoring:
+  enabled: true
+  metrics_collection:
+    - api_response_time
+    - cache_hit_rate
+    - error_rate
+    - memory_usage
+    - concurrent_requests
+    
+  alerting:
+    thresholds:
+      response_time: 1000  # ms
+      error_rate: 0.05     # 5%
+      memory_usage: 3584   # MB (3.5GB)
+      cache_hit_rate: 0.70 # 70%
+    
+    notifications:
+      - type: "log"
+        level: "warning"
+      - type: "metric"
+        destination: "prometheus"
+
+# 보안 설정
+security:
+  api_key_required: false
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 300
+    burst_size: 50
+    
+  cors:
+    enabled: true
+    allowed_origins: ["http://localhost:*"]
+    allowed_methods: ["GET", "POST"]
+    
+  input_validation:
+    enabled: true
+    max_request_size: "1MB"
+    sanitize_inputs: true
+
+# 로깅 설정
+logging:
+  level: "INFO"
+  format: "json"
+  file_rotation:
+    enabled: true
+    max_size: "100MB"
+    backup_count: 5
+    
+  log_categories:
+    - api_requests
+    - cache_operations
+    - error_events
+    - performance_metrics
+    - security_events
+
+# 개발 모드 설정
+development:
+  enabled: false
+  mock_data: false
+  detailed_errors: false
+  profiling: false
+  
+  # 테스트 데이터
+  mock_responses:
+    sentiment_analysis:
+      text_sentiment: 0.3
+      confidence: 0.8
+      processing_time: 0.15
+      
+    fusion_analysis:
+      fusion_score: 0.25
+      ml_confidence: 0.75
+      feature_count: 15
